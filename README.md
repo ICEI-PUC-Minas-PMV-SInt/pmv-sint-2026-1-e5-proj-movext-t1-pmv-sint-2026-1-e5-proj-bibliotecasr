@@ -6,7 +6,7 @@
 
 `5º Semestre`
 
-Este projeto tem como objetivo desenvolver um aplicativo móvel para a gestão da biblioteca municipal de São Roque, com o objetivo de facilitar o acesso dos usuários aos serviços oferecidos pela biblioteca. A aplicação permitirá que os usuários consultem o acervo, verifiquem a disponibilidade dos itens, realizem reservas, acompanhem seus empréstimos e solicitem renovações de forma prática e rápida.
+Este projeto tem como objetivo desenvolver um aplicativo móvel para facilitar o acesso dos usuários aos serviços oferecidos pela biblioteca biblioteca municipal de São Roque. A aplicação permitirá que os usuários consultem o acervo, verifiquem a disponibilidade dos itens, realizem reservas, acompanhem seus empréstimos e solicitem renovações de forma prática e rápida.
 
 ## Integrantes
 
