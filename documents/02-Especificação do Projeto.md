@@ -8,14 +8,21 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Arquitetura e Tecnologias
 
-o	Descreva brevemente a arquitetura definida para o projeto e as tecnologias a serem utilizadas. Sugere-se a criação de um diagrama de componentes da solução.
+O projeto será desenvolvido utilizando a arquitetura no modelo cliente-servidor, organizada em camadas, com separação entre frontend, backend e banco de dados.
+
+As tecnologias que serão utilizadas no desenvolvimento da aplicação são:
+
+* Frontend – React Native
+* Backend – ASP.NET Core
+* Banco de dados – MySQL
+
+![Diagrama](img/diagrama.jpg) 
+
 
 ## Project Model Canvas
 
-Colocar a imagem do modelo construído apresentando a proposta de solução.
+![Project_Model_Canvas](img/pmc.jpg)
 
-> **Links Úteis**:
-> Disponíveis em material de apoio do projeto
 
 ## Requisitos
 
@@ -25,8 +32,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| O sistema deve permitir que o usuário faça login | ALTA | 
+|RF-002| O sistema deve permitir que o usuário pesquise por um item | ALTA |
+|RF-003| O sistema deve permitir que o usuário solicite a reserva de um item | ALTA | 
+|RF-004| O sistema deve notificar o usuário quando a data de devolução estiver próxima | ALTA |
+|RF-005| O sistema deve notificar o usuário quando a reserva estiver disponível para retirada | ALTA | 
+|RF-006| O sistema deve permitir que o usuário consulte a agenda de clubes da biblioteca | ALTA |
+|RF-007| O sistema deve notificar o usuário quando a seu empréstimo estiver atrasado | ALTA | 
+|RF-008| O sistema deve permitir que o usuário consulte o status do seu cadastro | ALTA |
+|RF-009| O sistema deve permitir que o usuário visualize seu histórico de emprétimos | ALTA |
 
 ### Requisitos não Funcionais
 
@@ -34,21 +48,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+|RNF-003| A interface deve ser simples e intuitiva |  MÉDIA | 
+|RNF-004| O sistema deverá ser compatívem com sistemas operacionais Android e IOS |  MÉDIA | 
 
 ## Restrições
 
@@ -57,13 +58,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|02| 	A equipe não pode subcontratar o desenvolvimento do trabalho.        |
 
 ## Diagrama de Casos de Uso
 
