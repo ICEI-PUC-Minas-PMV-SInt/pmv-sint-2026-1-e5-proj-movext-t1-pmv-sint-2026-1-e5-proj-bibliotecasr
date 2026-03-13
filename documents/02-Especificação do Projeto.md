@@ -1,5 +1,7 @@
 # Especificações do Projeto
 
+<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+
 Através de pesquisas de campo dentro do público alvo do projeto, foram estipuladas as personas que seguem juntamente de suas histórias de usuário, dando origem aos requisitos funcionais e não funcionais da aplicação.
 
 # Personas
@@ -36,22 +38,6 @@ A partir da compreensão do dia a dia das personas identificadas para o projeto,
 | Camila Rodrigues | Reservar livros que estejam emprestados. | Garantir que poderei retirar o livro quando ele for devolvido. |
 | Camila Rodrigues | Receber uma notificação quando o livro reservado estiver disponível. | Ir até a biblioteca no momento certo para retirar o livro. |
 
-## Arquitetura e Tecnologias
-
-O sistema segue uma arquitetura **cliente-servidor**, onde o aplicativo móvel ou web funciona como cliente, responsável pela interação com o usuário, enquanto o servidor gerencia os dados do sistema, incluindo o acervo da biblioteca, reservas, empréstimos e eventos.
-
-As principais tecnologias previstas para o desenvolvimento incluem:
-
-- **Frontend:** Aplicação web ou mobile para consulta ao acervo, reservas e gerenciamento de empréstimos.
-- **Backend:** API responsável pelo gerenciamento de usuários, livros, reservas e eventos.
-- **Banco de Dados:** Sistema responsável por armazenar informações do acervo, usuários, empréstimos e reservas.
-- **Notificações:** Sistema de alertas para avisar sobre prazos de devolução, disponibilidade de livros e eventos da biblioteca.
-
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
 
 ## Arquitetura e Tecnologias
 
@@ -59,9 +45,20 @@ O projeto será desenvolvido utilizando a arquitetura no modelo cliente-servidor
 
 As tecnologias que serão utilizadas no desenvolvimento da aplicação são:
 
-* Frontend – React Native
-* Backend – ASP.NET Core
-* Banco de dados – MySQL
+* Backend: ASP.NET Core
+  
+O backend será responsável por fornecer uma Web API RESTful. A escolha do .NET se dá por sua robustez, performance, segurança e suporte contínuo da Microsoft, sendo amplamente adotado em projetos de pequeno a grande porte.
+
+* Frontend: React Native
+
+O frontend será responsável por fornecer uma interface moderna e responsiva. A escolha do React Native se dá por permitir o desenvolvimento de aplicativos móveis multiplataforma a partir de uma única base de código, reduzindo esforço de desenvolvimento e manutenção.
+
+* Banco de dados: MySQL
+  
+O banco de dados será responsável por armazenar e consultar os dados recebidos e gerados pelo sistema. A escolha do MySQL se dá por ser um sistema de gerenciamento de banco de dados relacional confiável, amplamente utilizado e pela facilidade de integração com diferentes tecnologias de backend, como o ASP.NET Core utilizado no projeto.
+
+
+## Diagrama de Contêiner
 
 ![Diagrama](img/diagrama.jpg) 
 
@@ -81,13 +78,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |------|-----------------------------------------|----|
 |RF-001| O sistema deve permitir que o usuário faça login | ALTA | 
 |RF-002| O sistema deve permitir que o usuário pesquise por um item | ALTA |
-|RF-003| O sistema deve permitir que o usuário solicite a reserva de um item | ALTA | 
-|RF-004| O sistema deve notificar o usuário quando a data de devolução estiver próxima | ALTA |
-|RF-005| O sistema deve notificar o usuário quando a reserva estiver disponível para retirada | ALTA | 
-|RF-006| O sistema deve permitir que o usuário consulte a agenda de clubes da biblioteca | ALTA |
-|RF-007| O sistema deve notificar o usuário quando a seu empréstimo estiver atrasado | ALTA | 
-|RF-008| O sistema deve permitir que o usuário consulte o status do seu cadastro | ALTA |
-|RF-009| O sistema deve permitir que o usuário visualize seu histórico de emprétimos | ALTA |
+|RF-003| O sistema deve permitir que o usuário visualize as informações de um item | ALTA |
+|RF-004| O sistema deve permitir que o usuário solicite a reserva de um item | ALTA | 
+|RF-005| O sistema deve permitir que o usuário solicite a renovação de um empréstimo | ALTA | 
+|RF-006| O sistema deve notificar o usuário quando a data de devolução estiver próxima | ALTA |
+|RF-007| O sistema deve notificar o usuário quando a reserva estiver disponível para retirada | ALTA | 
+|RF-008| O sistema deve permitir que o usuário consulte a agenda de clubes da biblioteca | ALTA |
+|RF-009| O sistema deve notificar o usuário quando o seu empréstimo estiver atrasado | ALTA | 
+|RF-010| O sistema deve permitir que o usuário consulte o status do seu cadastro | ALTA |
+|RF-011| O sistema deve permitir que o usuário visualize seu histórico de empréstimos | ALTA |
 
 ### Requisitos não Funcionais
 
