@@ -63,11 +63,6 @@ O banco de dados será responsável por armazenar e consultar os dados recebidos
 ![Diagrama](img/diagrama.jpg) 
 
 
-## Project Model Canvas
-
-![Project_Model_Canvas](img/pmc.jpg)
-
-
 ## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
@@ -104,7 +99,30 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| 	A equipe não pode subcontratar o desenvolvimento do trabalho.        |
+|02| A equipe não pode subcontratar o desenvolvimento do trabalho. |
+
+
+### Matriz de Rastreabilidade de Requisitos
+
+| Requisito   | Depende de  | 
+|-------|---------|
+|RF-001 - Login| — | 
+|RF-002 - Pesquisar item| RF-001 | 
+|RF-003 - Visualizar item| RF-001 | 
+|RF-004 - Solicitar reserva| RF-001 e RF-003 | 
+|RF-005 - Solicitar Renovação| RF-001 e RF-011 | 
+|RF-006 - Notificação devolução próxima| RF-001 e RF-011 | 
+|RF-007 - Notificação reserva disponível| RF-001 e RF-004 | 
+|RF-008 - Consultar agenda| — | 
+|RF-009 - Notificação empréstimo atrasado| RF-001 e RF-011 | 
+|RF-010 - Consultar status do cadastro| RF-001 | 
+|RF-011 - Histórico de empréstimos| RF-001 | 
+
+
+A matriz de rastreabilidade permite identificar as relações entre os requisitos do sistema e suas dependências. Observa-se que diversos requisitos dependem da autenticação do usuário, como a solicitação de reserva, a consulta do status do cadastro e a visualização do histórico de empréstimos. Também foi possível identificar dependências entre funcionalidades relacionadas a reservas e empréstimos, como o envio de notificações quando uma reserva estiver disponível para retirada e quando um empréstimo estiver atrasado.
+
+Essa análise auxilia no planejamento do desenvolvimento, pois facilita a visualização dos relacionamentos entre os requisitos e permite priorizar a implementação das funcionalidades básicas, como o login e o acesso ao histórico de empréstimos, antes da implementação das funcionalidades que dependem delas.
+
 
 ## Diagrama de Casos de Uso
 
