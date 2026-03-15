@@ -1,8 +1,8 @@
 # Introdução
 
-As bibliotecas públicas desempenham um papel importante no acesso à informação, à cultura e ao incentivo à leitura dentro das comunidades. No entanto, grande parte dos serviços da biblioteca ainda depende da presença física dos usuários para consultar a disponibilidade de materiais, realizar reservas ou renovar empréstimos. Esse processo pode tornar o acesso às informações menos prático, especialmente para pessoas que não podem se deslocar até o local com frequência.
+As bibliotecas públicas desempenham um papel importante no acesso à informação, à cultura e ao incentivo à leitura dentro das comunidades. No entanto, grande parte dos serviços da biblioteca ainda depende da presença física dos usuários para consultar a disponibilidade de materiais, solicitar reservas ou renovações. Esse processo pode tornar o acesso às informações menos prático, especialmente para pessoas que não podem se deslocar até o local com frequência.
 
-Diante desse cenário, o aplicativo permitirá aos usuários pesquisar títulos no acervo da biblioteca, verificar a disponibilidade das obras, realizar reservas e renovar empréstimos diretamente pelo celular. Além disso, o aplicativo contará com uma área dedicada à divulgação da agenda de eventos e atividades promovidas pela biblioteca, facilitando o acesso às informações e incentivando a participação da comunidade.
+Diante desse cenário, o aplicativo permitirá aos usuários pesquisar títulos no acervo da biblioteca, verificar a disponibilidade das obras, solicitar reservas e renovaçoes diretamente pelo celular. Além disso, o aplicativo contará com uma área dedicada à divulgação da agenda de eventos e atividades promovidas pela biblioteca, facilitando o acesso às informações e incentivando a participação da comunidade.
 
 ## Problema
 Atualmente, os usuários da Biblioteca Municipal Prof. Arthur Riedel, localizada em São Roque, no Brasil, precisam se deslocar até a biblioteca para consultar a disponibilidade de materiais no acervo e processos como renovação de empréstimos tambem dependem da presença física no local ou do contato via WhatsApp. A partir de uma análise, observa-se que essa dinâmica pode gerar dificuldades no acesso rápido às informações e limitar a participação da comunidade nos serviços e iniciativas culturais e educacionais para a comunidade.
@@ -18,7 +18,7 @@ Objetivos específicos:
 
 2. Desenvolver funcionalidades que permitam a consulta ao acervo e a verificação da disponibilidade de materiais;
 
-3. Implementar recursos que possibilitem a reserva e renovação de empréstimos de forma digital;
+3. Implementar recursos que possibilitem a solicitação de reserva e renovação de empréstimos de forma digital;
 
 4. Disponibilizar agenda de eventos, informações sobre clubes e atividades promovidas pela biblioteca.
 
