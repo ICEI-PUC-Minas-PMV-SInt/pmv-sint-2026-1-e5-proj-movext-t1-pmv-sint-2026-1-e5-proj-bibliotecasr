@@ -123,6 +123,49 @@ A matriz de rastreabilidade permite identificar as relações entre os requisito
 
 Essa análise auxilia no planejamento do desenvolvimento, pois facilita a visualização dos relacionamentos entre os requisitos e permite priorizar a implementação das funcionalidades básicas, como o login e o acesso ao histórico de empréstimos, antes da implementação das funcionalidades que dependem delas.
 
+##  Planejamento do Projeto 
+
+### Cronograma de Tarefas
+
+![Diagrama](img/tarefas.png) 
+
+
+### Cronograma de Pessoal
+
+#### Papéis e Responsabilidades  
+
+| Função                   | Integrante          | Descrição                                                                 |  
+|--------------------------|---------------------|---------------------------------------------------------------------------|  
+| **Gerente de Projeto**    | Geovana Miranda    | Coordena prazos, recursos, reuniões e entregas.                |  
+| **Analista de Requisitos**| Rodrigo Pires  | Documentação (problema, personas, requisitos).                           |  
+| **UX/UI Designer**        | Maria Fernanda    | Protótipos de telas, fluxo de navegação.                                 |  
+| **Desenvolvedor Mobile**  | Maria Fernanda     | Programação das funcionalidades e testes unitários.                      |  
+| **Desenvolvedor Back-end**| Geovana Miranda   | API, modelagem do banco de dados e rotas.                                |  
+| **QA (Testador)**         | Rodrigo Pires | Testes (unidade, funcionalidade, usabilidade).                           |  
+
+
+###  Cronograma de Custos 
+
+O projeto foi estimado considerando uma dedicação média de 10 horas semanais por profissional durante um período de 4 meses de desenvolvimento.
+
+| Etapa do Projeto     | Responsável    | Valor/hora | Horas trabalhadas | Custo |
+|-----------------|----------------------|-----------------|------|------|
+| **1. Levantamento de Requisitos** | Analista de Sistemas   | R$ 80,00  |  20h  | R$ 1.600,00 |
+| **2. Modelagem de dados**         | Desenvolvedor Backend  | R$ 120,00 |   20h   |  R$ 2.400,00 |
+| **3. Desenvolvimento Backend**    | Desenvolvedor Backend | R$ 120,00  |   40h   | R$ 4.800,00 |
+| **4. Projeto de interface**     | UX/UI Designer   | R$ 90,00 | 20h | R$ 1.800,00 |
+| **5. Desenvolvimento Mobile**     | Desenvolvedor Mobile  | R$ 110,00  |   40h   | R$ 4.400,00 |
+| **6. Testes e Correções**         | QA   | R$ 80,00   |    10h   | R$ 800,00 |
+
+
+###  Resumo dos Custos Estimados
+
+| Categoria                     | Valor Total (R$) |
+|------------------------------|------------------|
+| Recursos humanos | R$ 15.800,00        |
+| Hospedagem        | R$ 600,00           |
+| Publicação de app              | R$ 650,00           |
+| **Total Geral Estimado**       | **R$ 17.050,00**    |
 
 ## Diagrama de Casos de Uso
 
