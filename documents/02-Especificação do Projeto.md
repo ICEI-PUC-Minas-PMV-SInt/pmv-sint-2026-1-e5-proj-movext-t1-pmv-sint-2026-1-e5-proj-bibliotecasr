@@ -127,7 +127,7 @@ Essa análise auxilia no planejamento do desenvolvimento, pois facilita a visual
 
 ### Cronograma de Tarefas
 
-![Diagrama](img/tarefas.png) 
+![Diagrama](img/tarefas.png)
 
 
 ### Cronograma de Pessoal
@@ -171,27 +171,16 @@ O projeto foi estimado considerando uma dedicação média de 10 horas semanais 
 
 # ![image](img/Diagrama-SistemadaBiblioteca.jpg)
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
 
 ## Modelo ER (Projeto Conceitual)
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
+O modelo entidade-relacionamento abaixo descreve as principais entidades e seus relacionamentos no sistema.
 
-Sugestão de ferramentas para geração deste artefato: LucidChart e Draw.io.
 
-A referência abaixo irá auxiliá-lo na geração do artefato “Modelo ER”.
+![Diagrama_Entidade_Relacionamento](img/diagrama_er.png)
 
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+
 
 ## Projeto da Base de Dados
 
