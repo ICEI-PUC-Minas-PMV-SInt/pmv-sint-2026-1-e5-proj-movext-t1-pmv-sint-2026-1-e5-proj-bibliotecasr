@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "BibliotecaSR\\Program.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Program.cs",
               "RelativeToolTip": "BibliotecaSR\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-24T19:12:20.726Z",
               "EditorCaption": ""
@@ -75,8 +75,7 @@
               "RelativeToolTip": "BibliotecaSR\\Controllers\\UsuariosController.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAADwv0kAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T12:54:03.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-24T12:54:03.241Z"
             },
             {
               "$type": "Document",
@@ -88,8 +87,7 @@
               "RelativeToolTip": "BibliotecaSR\\Models\\AppDbContext.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAowDQAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T23:59:20.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T23:59:20.696Z"
             },
             {
               "$type": "Document",
@@ -101,8 +99,7 @@
               "RelativeToolTip": "BibliotecaSR\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T23:52:26.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-23T23:52:26.872Z"
             }
           ]
         }
