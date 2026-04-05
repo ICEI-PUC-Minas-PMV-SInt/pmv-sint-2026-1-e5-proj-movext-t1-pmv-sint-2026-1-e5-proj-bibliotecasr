@@ -4202,23 +4202,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
+    "C:\\Users\\Maria Fernanda\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\BibliotecaSR.csproj",
+      "projectUniqueName": "C:\\Users\\Maria Fernanda\\OneDrive\\Área de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\BibliotecaSR.csproj",
       "projectName": "BibliotecaSR",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\BibliotecaSR.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\obj\\",
+      "projectPath": "C:\\Users\\Maria Fernanda\\OneDrive\\Área de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\BibliotecaSR.csproj",
+      "packagesPath": "C:\\Users\\Maria Fernanda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maria Fernanda\\OneDrive\\Área de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Maria Fernanda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4245,7 +4245,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -4297,7 +4297,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

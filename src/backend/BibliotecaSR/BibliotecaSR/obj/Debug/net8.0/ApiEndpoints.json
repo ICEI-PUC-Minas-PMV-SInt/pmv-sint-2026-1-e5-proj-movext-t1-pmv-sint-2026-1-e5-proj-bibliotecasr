@@ -1,5 +1,57 @@
 [
   {
+    "ContainingType": "BibliotecaSR.Controllers.EmprestimosController",
+    "Method": "GetById",
+    "RelativePath": "api/Emprestimos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ItensController",
+    "Method": "GetAll",
+    "RelativePath": "api/Itens",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ItensController",
+    "Method": "GetById",
+    "RelativePath": "api/Itens/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ItensController",
+    "Method": "GetRecentes",
+    "RelativePath": "api/Itens/recentes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BibliotecaSR.Controllers.UsuariosController",
     "Method": "GetById",
     "RelativePath": "api/Usuarios/{id}",
@@ -47,6 +99,38 @@
       {
         "Name": "user",
         "Type": "BibliotecaSR.Models.UsuarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.EmprestimosController",
+    "Method": "Devolver",
+    "RelativePath": "emprestimos/{id}/devolver",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.EmprestimosController",
+    "Method": "GetByUsuario",
+    "RelativePath": "usuarios/{usuarioId}/emprestimos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

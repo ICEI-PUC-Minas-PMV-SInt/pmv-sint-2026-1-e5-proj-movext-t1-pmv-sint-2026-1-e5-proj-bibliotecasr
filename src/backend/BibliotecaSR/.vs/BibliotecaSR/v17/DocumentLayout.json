@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\",
+  "WorkspaceRootPath": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\maria fernanda\\onedrive\\\u00E1rea de trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\emprestimoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\emprestimoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\maria fernanda\\onedrive\\\u00E1rea de trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\itenscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\itenscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\maria fernanda\\onedrive\\\u00E1rea de trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
@@ -49,57 +45,43 @@
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Program.cs",
-              "RelativeDocumentMoniker": "BibliotecaSR\\Program.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Program.cs",
-              "RelativeToolTip": "BibliotecaSR\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAA0AAAAAAAAAA==",
+              "Title": "EmprestimosController.cs",
+              "DocumentMoniker": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\EmprestimosController.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Controllers\\EmprestimosController.cs",
+              "ToolTip": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\EmprestimosController.cs",
+              "RelativeToolTip": "BibliotecaSR\\Controllers\\EmprestimosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T19:12:20.726Z",
+              "WhenOpened": "2026-04-05T17:07:27.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "BibliotecaSR\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "BibliotecaSR\\Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADwv0kAAAAiAAAAAAAAAA==",
+              "Title": "ItensController.cs",
+              "DocumentMoniker": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\ItensController.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Controllers\\ItensController.cs",
+              "ToolTip": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\ItensController.cs",
+              "RelativeToolTip": "BibliotecaSR\\Controllers\\ItensController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T12:54:03.241Z"
+              "WhenOpened": "2026-04-05T17:06:06.867Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "BibliotecaSR\\Models\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "BibliotecaSR\\Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowDQAAABLAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Program.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Program.cs",
+              "ToolTip": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Program.cs",
+              "RelativeToolTip": "BibliotecaSR\\Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T23:59:20.696Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "BibliotecaSR\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Models\\Usuario.cs",
-              "RelativeToolTip": "BibliotecaSR\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T23:52:26.872Z"
+              "WhenOpened": "2026-04-05T17:04:01.115Z",
+              "EditorCaption": ""
             }
           ]
         }
