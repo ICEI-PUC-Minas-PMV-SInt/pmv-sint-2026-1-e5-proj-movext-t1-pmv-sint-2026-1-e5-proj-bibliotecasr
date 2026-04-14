@@ -12,7 +12,9 @@ namespace BibliotecaSR.Models
         public DbSet<Item> Itens { get; set; }
         public DbSet<Exemplar> Exemplares { get; set; }
         public DbSet<Emprestimo> Emprestimos { get; set; }
-
+        public DbSet<Reserva> Reservas { get; set; }
+        public DbSet<Renovacao> Renovacoes { get; set; }
+        public DbSet<Evento> Eventos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

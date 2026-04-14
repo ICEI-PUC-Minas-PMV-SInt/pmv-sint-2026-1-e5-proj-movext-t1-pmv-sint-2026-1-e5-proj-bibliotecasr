@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "MmqZscjuZdEbd/JObXWsGD5CVdBfGdrZrOrV6H5KZ8E=",
-  "Source": "BibliotecaSR",
-  "BasePath": "_content/BibliotecaSR",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"o4FMc1Q6WCG/+wHJn4yDgaOJ/Vj+jM0FnXs3mEOBOng=","Source":"BibliotecaSR","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
