@@ -46,11 +46,11 @@ namespace BibliotecaSR.Controllers
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpGet("aprovadas")]
-        public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesAprovadas()
+        [HttpGet("confirmadas")]
+        public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesConfirmadas()
         {
             var renovacoes = await _context.Renovacoes
-                .Where(r => r.Status == StatusRenovacao.Aprovada)
+                .Where(r => r.Status == StatusRenovacao.Confirmada)
                 .OrderBy(r => r.DataSolicitacao)
                 .Include(r => r.Emprestimo)
                     .ThenInclude(e => e.Usuario)
@@ -63,11 +63,11 @@ namespace BibliotecaSR.Controllers
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpGet("negadas")]
-        public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesNegadas()
+        [HttpGet("naoefetivadas")]
+        public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesNaoEfetivadas()
         {
             var renovacoes = await _context.Renovacoes
-                .Where(r => r.Status == StatusRenovacao.Negada)
+                .Where(r => r.Status == StatusRenovacao.NaoEfetivada)
                 .OrderBy(r => r.DataSolicitacao)
                 .Include(r => r.Emprestimo)
                     .ThenInclude(e => e.Usuario)
@@ -128,9 +128,23 @@ namespace BibliotecaSR.Controllers
 
             var itemId = emprestimo.Exemplar.ItemId;
 
+            // Emprestimo esta ativo?
+
+            if (emprestimo.Status != StatusEmprestimo.Emprestado)
+            {
+                return BadRequest("Só é possível renovar empréstimos ativos.");
+            }
+
             // Existe alguma reserva para esse item?
+           
+            var existeReserva = await _context.Reservas
+                .AnyAsync(r => r.ItemId == itemId
+                && r.Status == StatusReserva.Ativa);
 
-
+            if (existeReserva)
+            {
+                return BadRequest("Não é possível renovar. Esse item foi reservado por outro usuário.");
+            }
 
             // Existe alguma solicitação de renovação para esse emprestimo?
 
@@ -181,7 +195,7 @@ namespace BibliotecaSR.Controllers
             if (renovacao.Status != StatusRenovacao.Pendente)
                 return BadRequest("Só é possível cancelar solicitações pendentes.");
 
-            renovacao.Status = StatusRenovacao.Negada;
+            renovacao.Status = StatusRenovacao.Cancelada;
 
             await _context.SaveChangesAsync();
 
@@ -189,8 +203,8 @@ namespace BibliotecaSR.Controllers
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpPut("{id}/aprovar")]
-        public async Task<ActionResult> Aprovar(int id)
+        [HttpPut("{id}/confirmar")]
+        public async Task<ActionResult> Confirmar(int id)
         {
             var renovacao = await _context.Renovacoes
                 .Include(r => r.Emprestimo)
@@ -199,7 +213,7 @@ namespace BibliotecaSR.Controllers
             if (renovacao == null)
                 return NotFound();
 
-            renovacao.Status = StatusRenovacao.Aprovada;
+            renovacao.Status = StatusRenovacao.Confirmada;
 
             await _context.SaveChangesAsync();
 
@@ -207,15 +221,15 @@ namespace BibliotecaSR.Controllers
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpPut("{id}/negar")]
-        public async Task<ActionResult> Negar(int id)
+        [HttpPut("{id}/naoefetivada")]
+        public async Task<ActionResult> NaoEfetivada(int id)
         {
             var renovacao = await _context.Renovacoes.FindAsync(id);
 
             if (renovacao == null)
                 return NotFound();
 
-            renovacao.Status = StatusRenovacao.Negada;
+            renovacao.Status = StatusRenovacao.NaoEfetivada;
 
             await _context.SaveChangesAsync();
 

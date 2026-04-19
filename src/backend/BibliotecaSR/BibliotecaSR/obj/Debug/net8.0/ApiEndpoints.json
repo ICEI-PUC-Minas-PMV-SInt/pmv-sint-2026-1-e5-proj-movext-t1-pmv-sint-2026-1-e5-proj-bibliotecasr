@@ -16,6 +16,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BibliotecaSR.Controllers.EventosController",
+    "Method": "GetAll",
+    "RelativePath": "api/Eventos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.EventosController",
+    "Method": "Create",
+    "RelativePath": "api/Eventos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "evento",
+        "Type": "BibliotecaSR.Models.Evento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.EventosController",
+    "Method": "GetById",
+    "RelativePath": "api/Eventos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.EventosController",
+    "Method": "Update",
+    "RelativePath": "api/Eventos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "evento",
+        "Type": "BibliotecaSR.Models.Evento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.EventosController",
+    "Method": "Delete",
+    "RelativePath": "api/Eventos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BibliotecaSR.Controllers.ItensController",
     "Method": "GetAll",
     "RelativePath": "api/Itens",
@@ -50,6 +129,286 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "GetAll",
+    "RelativePath": "api/Renovacoes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "SolicitarRenovacao",
+    "RelativePath": "api/Renovacoes/{emprestimoId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "emprestimoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "Cancelar",
+    "RelativePath": "api/Renovacoes/{id}/cancelar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "Confirmar",
+    "RelativePath": "api/Renovacoes/{id}/confirmar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "Encerrar",
+    "RelativePath": "api/Renovacoes/{id}/encerrar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "NaoEfetivada",
+    "RelativePath": "api/Renovacoes/{id}/naoefetivada",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "GetRenovacoesConfirmadas",
+    "RelativePath": "api/Renovacoes/confirmadas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BibliotecaSR.Models.Renovacao, BibliotecaSR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "GetRenovacoesNaoEfetivadas",
+    "RelativePath": "api/Renovacoes/naoefetivadas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BibliotecaSR.Models.Renovacao, BibliotecaSR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "GetRenovacoesPendentes",
+    "RelativePath": "api/Renovacoes/pendentes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BibliotecaSR.Models.Renovacao, BibliotecaSR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "GetAll",
+    "RelativePath": "api/Reservas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "Cancelar",
+    "RelativePath": "api/Reservas/{id}/cancelar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "Confirmar",
+    "RelativePath": "api/Reservas/{id}/confirmar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "Encerrar",
+    "RelativePath": "api/Reservas/{id}/encerrar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "NaoEfetivada",
+    "RelativePath": "api/Reservas/{id}/naoefetivada",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "SolicitarReserva",
+    "RelativePath": "api/Reservas/{itemId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "GetReservasAtivas",
+    "RelativePath": "api/Reservas/ativas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BibliotecaSR.Models.Reserva, BibliotecaSR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "GetReservasConfirmadas",
+    "RelativePath": "api/Reservas/confirmadas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BibliotecaSR.Models.Reserva, BibliotecaSR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "BibliotecaSR.Controllers.UsuariosController",
@@ -124,6 +483,38 @@
     "ContainingType": "BibliotecaSR.Controllers.EmprestimosController",
     "Method": "GetByUsuario",
     "RelativePath": "usuarios/{usuarioId}/emprestimos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
+    "Method": "GetMinhasRenovacoes",
+    "RelativePath": "usuarios/{usuarioId}/renovacoes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.ReservasController",
+    "Method": "GetMinhasReservas",
+    "RelativePath": "usuarios/{usuarioId}/reservas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

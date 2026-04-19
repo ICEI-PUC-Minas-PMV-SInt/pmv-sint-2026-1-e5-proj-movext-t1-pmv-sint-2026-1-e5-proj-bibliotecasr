@@ -45,7 +45,7 @@ namespace BibliotecaSR.Data
                 new Exemplar { ItemId = itensDb[1].Id, Status = StatusExemplar.Disponivel },
                 new Exemplar { ItemId = itensDb[1].Id, Status = StatusExemplar.Emprestado },
                 new Exemplar { ItemId = itensDb[2].Id, Status = StatusExemplar.Emprestado },
-                new Exemplar { ItemId = itensDb[2].Id, Status = StatusExemplar.Disponivel },
+                new Exemplar { ItemId = itensDb[2].Id, Status = StatusExemplar.Emprestado },
                 new Exemplar { ItemId = itensDb[3].Id, Status = StatusExemplar.Disponivel },
                 new Exemplar { ItemId = itensDb[4].Id, Status = StatusExemplar.Disponivel },
                 new Exemplar { ItemId = itensDb[4].Id, Status = StatusExemplar.Emprestado },
@@ -124,7 +124,7 @@ namespace BibliotecaSR.Data
                 new Emprestimo
                 {
                     UsuarioId = 3,
-                    ExemplarId = exemplaresAdicionados[5].Id,
+                    ExemplarId = exemplaresAdicionados[15].Id,
                     DataRetirada = DateTime.UtcNow.AddDays(-40),
                     DataPrevistaDevolucao = DateTime.UtcNow.AddDays(-25),
                     DataDevolucao = DateTime.UtcNow.AddDays(-24),
@@ -147,6 +147,11 @@ namespace BibliotecaSR.Data
                     DataPrevistaDevolucao = DateTime.UtcNow.AddDays(-13),
                     DataDevolucao = DateTime.UtcNow.AddDays(-12),
                     Status = StatusEmprestimo.Devolvido
+                },
+                new Emprestimo
+                {
+                    UsuarioId = 3,
+                    ExemplarId = exemplaresAdicionados[5].Id,
                 },
                 new Emprestimo
                 {

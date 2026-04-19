@@ -138,7 +138,6 @@ namespace BibliotecaSR.Controllers
                 return BadRequest("Este item não está disponível para reserva no momento.");
 
 
-
             var reserva = new Reserva
             {
                 ItemId = itemId,

@@ -19,9 +19,7 @@ namespace BibliotecaSR.Models
     public enum StatusExemplar
     {
         Disponivel,
-        Emprestado,
-        Danificado,
-        Perdido
+        Emprestado
     }
 }
 

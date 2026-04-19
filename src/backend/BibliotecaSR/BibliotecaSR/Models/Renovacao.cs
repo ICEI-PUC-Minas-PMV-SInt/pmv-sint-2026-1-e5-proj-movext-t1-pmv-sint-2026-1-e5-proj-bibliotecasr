@@ -21,8 +21,9 @@ namespace BibliotecaSR.Models
     public enum StatusRenovacao
     {
         Pendente,
-        Aprovada,
-        Negada,
+        Cancelada,
+        Confirmada,
+        NaoEfetivada,
         Encerrada
     }
 }
