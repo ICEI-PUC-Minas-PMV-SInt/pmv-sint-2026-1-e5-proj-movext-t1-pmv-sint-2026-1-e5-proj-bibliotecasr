@@ -181,6 +181,19 @@ O modelo entidade-relacionamento abaixo descreve as principais entidades e seus 
 ![Diagrama_Entidade_Relacionamento](img/diagrama_er.png)
 
 
+# Diagrama Entidade Relacionamento
+DER antes do App (Atendimento por WhatsApp / telefone) 
+
+<img width="1536" height="1024" alt="DER antes do App (Atendimento por WhatsApp  telefone)" src="https://github.com/user-attachments/assets/1855a4a2-a76b-4b7a-acfe-647047e2536b" />
+
+# DER depois do App 
+
+<img width="1536" height="1024" alt="DER depois do App" src="https://github.com/user-attachments/assets/985c909b-4e86-4ad4-b40d-1258864a721e" />
+
+# kamban
+
+<img width="874" height="845" alt="kamban " src="https://github.com/user-attachments/assets/7ccb3ace-0b0e-4b83-80e5-6f60aac46155" />
+
 
 ## Projeto da Base de Dados
 
