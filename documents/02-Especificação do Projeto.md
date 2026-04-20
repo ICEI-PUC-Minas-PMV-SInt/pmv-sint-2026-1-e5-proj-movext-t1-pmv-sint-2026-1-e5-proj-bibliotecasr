@@ -181,18 +181,22 @@ O modelo entidade-relacionamento abaixo descreve as principais entidades e seus 
 ![Diagrama_Entidade_Relacionamento](img/diagrama_er.png)
 
 
-# Diagrama Entidade Relacionamento
-DER antes do App (Atendimento por WhatsApp / telefone) 
+# Diagrama BPMN
 
-<img width="1536" height="1024" alt="DER antes do App (Atendimento por WhatsApp  telefone)" src="https://github.com/user-attachments/assets/1855a4a2-a76b-4b7a-acfe-647047e2536b" />
+## BPMN do processo atual de atendimento da biblioteca
 
-# DER depois do App 
+<img width="1904" height="1939" alt="DIAGRAMA 1 (Atual)" src="https://github.com/user-attachments/assets/99b1a286-f2d1-4a51-a3f0-36d31ed3267d" />
 
-<img width="1536" height="1024" alt="DER depois do App" src="https://github.com/user-attachments/assets/985c909b-4e86-4ad4-b40d-1258864a721e" />
+
+## BPMN do processo futuro com apoio de aplicativo móvel
+
+<img width="1904" height="1609" alt="DIAGRAMA 2  (Aplicativo)" src="https://github.com/user-attachments/assets/7428aad8-dd96-4541-a105-05cab709d102" />
+
 
 # kamban
 
 <img width="874" height="845" alt="kamban " src="https://github.com/user-attachments/assets/7ccb3ace-0b0e-4b83-80e5-6f60aac46155" />
+
 
 
 ## Projeto da Base de Dados
