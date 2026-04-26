@@ -20,12 +20,12 @@ namespace BibliotecaSR.Models
         public DateTime DataPrevistaDevolucao { get; set; } = DateTime.UtcNow.AddDays(15);
         public DateTime? DataDevolucao { get; set; }
         public StatusEmprestimo Status { get; set; } = StatusEmprestimo.Emprestado;
+        public bool EstaAtrasado =>  DataDevolucao == null && DataPrevistaDevolucao < DateTime.UtcNow;
     }
 
     public enum StatusEmprestimo
     {
         Emprestado,
-        Atrasado,
         Devolvido
     }
 }

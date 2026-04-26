@@ -19,7 +19,7 @@ namespace BibliotecaSR.Controllers
             _context = context;
         }
 
-        [HttpGet("/usuarios/{usuarioId}/emprestimos")]
+        [HttpGet("~/api/usuarios/{usuarioId}/emprestimos")]
         public async Task<ActionResult> GetByUsuario(int usuarioId)
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -41,7 +41,9 @@ namespace BibliotecaSR.Controllers
                     e.DataPrevistaDevolucao,
                     e.DataDevolucao,
                     e.Status,
-                    Titulo = e.Exemplar.Item.Titulo
+                    e.EstaAtrasado,
+                    Titulo = e.Exemplar.Item.Titulo,
+                    Autor = e.Exemplar.Item.Autor
                 })
                 .ToListAsync();
 
@@ -68,7 +70,9 @@ namespace BibliotecaSR.Controllers
                     e.DataPrevistaDevolucao,
                     e.DataDevolucao,
                     e.Status,
-                    Titulo = e.Exemplar.Item.Titulo
+                    e.EstaAtrasado,
+                    Titulo = e.Exemplar.Item.Titulo,
+                    Autor = e.Exemplar.Item.Autor,
                 })
                 .FirstOrDefaultAsync();
 
@@ -81,7 +85,7 @@ namespace BibliotecaSR.Controllers
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpPut("/emprestimos/{id}/devolver")]
+        [HttpPut("~/api/emprestimos/{id}/devolver")]
         public async Task<ActionResult> Devolver(int id)
         {
             var emprestimo = await _context.Emprestimos

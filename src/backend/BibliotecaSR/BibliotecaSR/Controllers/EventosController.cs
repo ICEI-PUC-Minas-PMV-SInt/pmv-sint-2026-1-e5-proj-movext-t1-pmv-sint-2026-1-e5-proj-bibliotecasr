@@ -59,6 +59,12 @@ namespace BibliotecaSR.Controllers
 
             eventoDb.Titulo = evento.Titulo;
             eventoDb.Descricao = evento.Descricao;
+            eventoDb.Categoria = evento.Categoria; 
+            eventoDb.DataHora = evento.DataHora;   
+            eventoDb.DiaSemana = evento.DiaSemana;
+            eventoDb.Hora = evento.Hora;
+            eventoDb.LivroDoMes = evento.LivroDoMes;
+            eventoDb.Autor = evento.Autor;
 
             await _context.SaveChangesAsync();
 

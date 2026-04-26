@@ -79,7 +79,7 @@ namespace BibliotecaSR.Controllers
             return Ok(renovacoes);
         }
 
-        [HttpGet("/usuarios/{usuarioId}/renovacoes")]
+        [HttpGet("~/api/usuarios/{usuarioId}/renovacoes")]
         public async Task<ActionResult> GetMinhasRenovacoes(int usuarioId)
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

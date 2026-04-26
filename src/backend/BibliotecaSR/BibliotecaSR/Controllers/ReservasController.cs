@@ -56,7 +56,7 @@ namespace BibliotecaSR.Controllers
             return Ok(reservas);
         }
 
-        [HttpGet("/usuarios/{usuarioId}/reservas")]
+        [HttpGet("~/api/usuarios/{usuarioId}/reservas")]
         public async Task<ActionResult> GetMinhasReservas(int usuarioId)
         {
 

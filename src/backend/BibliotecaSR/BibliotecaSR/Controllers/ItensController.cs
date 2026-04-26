@@ -20,10 +20,16 @@ namespace BibliotecaSR.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetAll()
+        public async Task<ActionResult> GetAll([FromQuery] string? titulo)
         {
-            var itens = await _context.Itens.ToListAsync();
+            var query = _context.Itens.AsQueryable();
 
+            if (!string.IsNullOrWhiteSpace(titulo))
+            {
+                query = query.Where(i => i.Titulo.Contains(titulo));
+            }
+
+            var itens = await query.ToListAsync();
             return Ok(itens);
         }
 
@@ -49,6 +55,11 @@ namespace BibliotecaSR.Controllers
                     i.Titulo,
                     i.Autor,
                     i.Categoria,
+                    i.Editora,
+                    i.AnoPublicacao,
+                    i.DataCadastro,
+                    i.Tipo,
+                    i.ISBN,
                     TotalExemplares = i.Exemplares.Count,
                     Disponiveis = i.Exemplares.Count(e => e.Status == StatusExemplar.Disponivel)
                 })

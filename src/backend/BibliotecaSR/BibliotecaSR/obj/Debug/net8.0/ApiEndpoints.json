@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BibliotecaSR.Controllers.EmprestimosController",
+    "Method": "Devolver",
+    "RelativePath": "api/emprestimos/{id}/devolver",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BibliotecaSR.Controllers.EventosController",
     "Method": "GetAll",
     "RelativePath": "api/Eventos",
@@ -101,7 +117,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "titulo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -448,41 +470,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BibliotecaSR.Controllers.UsuariosController",
-    "Method": "Authenticate",
-    "RelativePath": "api/Usuarios/authenticate",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "user",
-        "Type": "BibliotecaSR.Models.UsuarioDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BibliotecaSR.Controllers.EmprestimosController",
-    "Method": "Devolver",
-    "RelativePath": "emprestimos/{id}/devolver",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "BibliotecaSR.Controllers.EmprestimosController",
     "Method": "GetByUsuario",
-    "RelativePath": "usuarios/{usuarioId}/emprestimos",
+    "RelativePath": "api/usuarios/{usuarioId}/emprestimos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -498,7 +488,7 @@
   {
     "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
     "Method": "GetMinhasRenovacoes",
-    "RelativePath": "usuarios/{usuarioId}/renovacoes",
+    "RelativePath": "api/usuarios/{usuarioId}/renovacoes",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -514,7 +504,7 @@
   {
     "ContainingType": "BibliotecaSR.Controllers.ReservasController",
     "Method": "GetMinhasReservas",
-    "RelativePath": "usuarios/{usuarioId}/reservas",
+    "RelativePath": "api/usuarios/{usuarioId}/reservas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -522,6 +512,22 @@
       {
         "Name": "usuarioId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BibliotecaSR.Controllers.UsuariosController",
+    "Method": "Authenticate",
+    "RelativePath": "api/Usuarios/authenticate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "BibliotecaSR.Models.UsuarioDto",
         "IsRequired": true
       }
     ],

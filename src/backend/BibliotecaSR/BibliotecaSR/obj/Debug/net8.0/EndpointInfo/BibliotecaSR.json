@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/usuarios/{usuarioId}/emprestimos": {
+    "/api/usuarios/{usuarioId}/emprestimos": {
       "get": {
         "tags": [
           "Emprestimos"
@@ -51,7 +51,7 @@
         }
       }
     },
-    "/emprestimos/{id}/devolver": {
+    "/api/emprestimos/{id}/devolver": {
       "put": {
         "tags": [
           "Emprestimos"
@@ -203,6 +203,15 @@
       "get": {
         "tags": [
           "Itens"
+        ],
+        "parameters": [
+          {
+            "name": "titulo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -372,7 +381,7 @@
         }
       }
     },
-    "/usuarios/{usuarioId}/renovacoes": {
+    "/api/usuarios/{usuarioId}/renovacoes": {
       "get": {
         "tags": [
           "Renovacoes"
@@ -598,7 +607,7 @@
         }
       }
     },
-    "/usuarios/{usuarioId}/reservas": {
+    "/api/usuarios/{usuarioId}/reservas": {
       "get": {
         "tags": [
           "Reservas"
@@ -858,6 +867,29 @@
         "type": "integer",
         "format": "int32"
       },
+      "CategoriaEvento": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "DiaSemana": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "Emprestimo": {
         "required": [
           "dataPrevistaDevolucao",
@@ -900,12 +932,17 @@
           },
           "status": {
             "$ref": "#/components/schemas/StatusEmprestimo"
+          },
+          "estaAtrasado": {
+            "type": "boolean",
+            "readOnly": true
           }
         },
         "additionalProperties": false
       },
       "Evento": {
         "required": [
+          "categoria",
           "descricao",
           "titulo"
         ],
@@ -922,6 +959,29 @@
           "descricao": {
             "minLength": 1,
             "type": "string"
+          },
+          "categoria": {
+            "$ref": "#/components/schemas/CategoriaEvento"
+          },
+          "dataHora": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "diaSemana": {
+            "$ref": "#/components/schemas/DiaSemana"
+          },
+          "hora": {
+            "type": "string",
+            "nullable": true
+          },
+          "livroDoMes": {
+            "type": "string",
+            "nullable": true
+          },
+          "autor": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1093,8 +1153,7 @@
       "StatusEmprestimo": {
         "enum": [
           0,
-          1,
-          2
+          1
         ],
         "type": "integer",
         "format": "int32"

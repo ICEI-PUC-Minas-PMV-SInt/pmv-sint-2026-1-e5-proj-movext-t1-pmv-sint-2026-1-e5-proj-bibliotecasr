@@ -65,8 +65,26 @@ namespace BibliotecaSR.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Autor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Categoria")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DataHora")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Descricao")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DiaSemana")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Hora")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LivroDoMes")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Titulo")
