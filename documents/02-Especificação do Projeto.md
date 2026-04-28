@@ -183,14 +183,7 @@ O modelo entidade-relacionamento abaixo descreve as principais entidades e seus 
 
 # Diagrama BPMN
 
-## BPMN do processo atual de atendimento da biblioteca
-
-<img width="1904" height="1939" alt="DIAGRAMA 1 (Atual)" src="https://github.com/user-attachments/assets/99b1a286-f2d1-4a51-a3f0-36d31ed3267d" />
-
-
-## BPMN do processo futuro com apoio de aplicativo móvel
-
-<img width="1904" height="1609" alt="DIAGRAMA 2  (Aplicativo)" src="https://github.com/user-attachments/assets/7428aad8-dd96-4541-a105-05cab709d102" />
+<img width="2516" height="4478" alt="diagram" src="https://github.com/user-attachments/assets/8a99dd6b-addf-470f-8865-6e87cdfb2b5b" />
 
 
 # kamban
