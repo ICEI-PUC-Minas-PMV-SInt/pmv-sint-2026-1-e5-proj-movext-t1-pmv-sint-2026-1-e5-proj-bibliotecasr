@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaSR", "BibliotecaSR\BibliotecaSR.csproj", "{D304FC7C-17F5-4D87-9516-D312B42F9F34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibliotecaSR.Tests", "..\BibliotecaSR.Tests\BibliotecaSR.Tests.csproj", "{7578F2AD-C13F-40FB-95D5-B91A93415569}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D304FC7C-17F5-4D87-9516-D312B42F9F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D304FC7C-17F5-4D87-9516-D312B42F9F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D304FC7C-17F5-4D87-9516-D312B42F9F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7578F2AD-C13F-40FB-95D5-B91A93415569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7578F2AD-C13F-40FB-95D5-B91A93415569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7578F2AD-C13F-40FB-95D5-B91A93415569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7578F2AD-C13F-40FB-95D5-B91A93415569}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,35 +20,8 @@ import {
   View,
 } from "react-native";
 import api from "../../services/api";
-
-const categorias = {
-  0: "Romance",
-  1: "Fantasia",
-  2: "Ficção Científica",
-  3: "Mistério",
-  4: "Terror",
-  5: "Distopia",
-  6: "Aventura",
-  7: "Poesia",
-  8: "Biografia",
-  9: "História",
-  10: "Filosofia",
-  11: "Ciências",
-  12: "Tecnologia",
-  13: "Educação",
-  14: "Auto Ajuda",
-  15: "Religião",
-  16: "Infantil",
-  17: "Juvenil",
-  18: "Didático",
-};
-
-const tipo = {
-  0: "Livro",
-  1: "Quadrinho",
-  2: "Romance Gráfico",
-  3: "Mangá",
-};
+import { categorias } from "../../utils/categoriaItem.js";
+import { tipo } from "../../utils/tipoItem.js";
 
 export default function Item() {
   const { id } = useLocalSearchParams();
@@ -64,18 +37,16 @@ export default function Item() {
   }, [id]);
 
   const handleBack = () => {
-    // Verificamos se existe histórico para voltar
     if (navigation.canGoBack()) {
       navigation.goBack();
     } else {
-      // Caso o usuário abra o app direto num link, ele vai pra Home
       router.replace("/");
     }
   };
 
   const getItem = async () => {
     try {
-      const response = await api.get(/Itens/${id});
+      const response = await api.get(`/Itens/${id}`);
       setItem(response.data);
     } catch (error) {
       console.error(error);
@@ -86,7 +57,7 @@ export default function Item() {
   };
 
   const handleReserva = () => {
-    Alert.alert("Reserva", Botão clicado para reservar "${item.titulo}");
+    Alert.alert("Reserva", `Botão clicado para reservar "${item.titulo}`);
   };
 
   if (loading) {
@@ -221,16 +192,6 @@ export default function Item() {
           </Text>
         </TouchableOpacity>
       </View>
-import { StyleSheet, Text, View } from "react-native";
-import { useLocalSearchParams } from "expo-router";
-
-export default function Item() {
-  const { id } = useLocalSearchParams();
-  console.log("Clicou no livro:", id);
-
-  return (
-    <View style={styles.container} >
-      <Text style={styles.text}>🎉 pagina do livro {id}!</Text>
     </View>
   );
 }
@@ -347,7 +308,4 @@ const styles = StyleSheet.create({
   },
   disabledButton: { backgroundColor: "#A0A0A0" },
   reserveButtonText: { color: "#FFF", fontWeight: "bold", fontSize: 16 },
-});
-  container: { flex: 1, justifyContent: "center", alignItems: "center" },
-  text: { fontSize: 20, fontWeight: "bold" },
 });

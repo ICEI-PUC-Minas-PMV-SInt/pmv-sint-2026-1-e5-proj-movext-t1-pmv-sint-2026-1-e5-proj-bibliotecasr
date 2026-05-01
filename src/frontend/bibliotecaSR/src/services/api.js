@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as SecureStore from "expo-secure-store";
 
-const ip = "192.168.1.17";
+const ip = "192.168.1.16";
 
 const api = axios.create({
   baseURL: `http://${ip}:5187/api`,

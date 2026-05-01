@@ -1,28 +1,9 @@
-import {
-  BookOpen,
-  Gamepad2
-} from "lucide-react-native";
+import { BookOpen, Gamepad2 } from "lucide-react-native";
 import { useEffect, useState } from "react";
-import {
-  Alert,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View
-} from "react-native";
-import api from "../../services/api";
-
+import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import EventCard from "../../components/EventCard";
-
-const diasDaSemana = [
-  "Segunda-feira",
-  "Terça-feira",
-  "Quarta-feira",
-  "Quinta-feira",
-  "Sexta-feira",
-  "Sábado",
-  "Domingo",
-];
+import api from "../../services/api";
+import { diasDaSemana } from "../../utils/diasDaSemana.js";
 
 export default function Agenda() {
   const [events, setEvents] = useState([]);

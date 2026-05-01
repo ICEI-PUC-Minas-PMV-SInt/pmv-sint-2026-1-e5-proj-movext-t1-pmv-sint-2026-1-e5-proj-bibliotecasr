@@ -28,7 +28,7 @@ export default function ResultadoBusca() {
   const fetchResults = async () => {
     try {
       setLoading(true);
-      const response = await api.get(/Itens?titulo=${query});
+      const response = await api.get(`/Itens?titulo=${query}`);
       setResults(response.data);
     } catch (error) {
       console.error("Erro na busca:", error);

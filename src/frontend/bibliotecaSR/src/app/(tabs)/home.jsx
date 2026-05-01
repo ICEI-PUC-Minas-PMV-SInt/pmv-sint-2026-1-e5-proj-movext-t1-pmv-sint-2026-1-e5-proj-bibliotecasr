@@ -1,10 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { useRouter } from "expo-router";
-import {
-  AlertCircle,
-  CheckCircle2,
-  Search
-} from "lucide-react-native";
+import { AlertCircle, CheckCircle2, Search } from "lucide-react-native";
 import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
@@ -14,7 +10,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View
+  View,
 } from "react-native";
 import ItemCard from "../../components/ItemCard";
 import api from "../../services/api";
@@ -25,22 +21,18 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const navigation = useNavigation();
 
-
   const router = useRouter();
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
 
     router.push({
-      pathname: "/resultadoBusca", 
+      pathname: "/resultadoBusca",
       params: { query: searchQuery },
     });
 
-    setSearchQuery(""); 
+    setSearchQuery("");
   };
-
-
-
 
   useEffect(() => {
     getNewItems();
@@ -77,7 +69,7 @@ export default function Home() {
 
         <View style={styles.searchBar}>
           <Search color="#999" size={20} />
-        <TextInput
+          <TextInput
             placeholder="Busca por título"
             style={styles.searchInput}
             value={searchQuery}
@@ -85,9 +77,6 @@ export default function Home() {
             returnKeyType="search"
             onSubmitEditing={handleSearch}
             autoCapitalize="none"
-          <TextInput
-            placeholder="Busca por título"
-            style={styles.searchInput}
           />
         </View>
       </View>

@@ -1,6 +1,20 @@
-import { Info, LogOut, Mail, User as UserIcon } from "lucide-react-native";
+import {
+  Info,
+  Lock,
+  LogOut,
+  Mail,
+  User as UserIcon,
+} from "lucide-react-native";
 import { useEffect, useState } from "react";
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
+} from "react-native";
 import { useAuth } from "../../context/authContext";
 import api from "../../services/api";
 
@@ -9,6 +23,10 @@ export default function User() {
 
   const [userData, setUserData] = useState("");
   const [loading, setLoading] = useState(true);
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
   useEffect(() => {
     getUser();
@@ -34,6 +52,39 @@ export default function User() {
     ]);
   };
 
+  const handleSavePassword = async () => {
+    if (!currentPassword || !newPassword) {
+      Alert.alert("Erro", "Preencha todos os campos de senha.");
+      return;
+    }
+
+    try {
+      const authResponse = await api.post("/Usuarios/authenticate", {
+        email: userData.email,
+        senha: currentPassword,
+      });
+
+      if (authResponse.status === 200) {
+        await api.put(`/Usuarios/${user.id}`, {
+          email: userData.email,
+          senha: newPassword,
+        });
+
+        Alert.alert("Sucesso", "Sua senha foi alterada!");
+
+        setCurrentPassword("");
+        setNewPassword("");
+        setIsEditing(false);
+      }
+    } catch (error) {
+      const msg =
+        error.response?.status === 401
+          ? "Senha atual incorreta."
+          : "Não foi possível alterar a senha.";
+      Alert.alert("Erro", msg);
+    }
+  };
+
   const getSituacaoColor = (status) => {
     switch (status) {
       case 0:
@@ -48,7 +99,7 @@ export default function User() {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.avatarCircle}>
           <UserIcon color="#FFF" size={40} />
@@ -72,6 +123,51 @@ export default function User() {
               <Text style={styles.label}>E-mail</Text>
               <Text style={styles.value}>{userData?.email}</Text>
             </View>
+          </View>
+
+          <View
+            style={[
+              styles.infoRow,
+              { flexDirection: "column", alignItems: "flex-start" },
+            ]}
+          >
+            <TouchableOpacity
+              style={styles.passwordHeader}
+              onPress={() => setIsEditing(!isEditing)}
+            >
+              <View style={styles.iconBox}>
+                <Lock color="#666" size={20} />
+              </View>
+              <Text style={[styles.value, { flex: 1 }]}>Alterar Senha</Text>
+              <Text style={{ color: "#00875F", fontWeight: "bold" }}>
+                {isEditing ? "Cancelar" : "Editar"}
+              </Text>
+            </TouchableOpacity>
+
+            {isEditing && (
+              <View style={styles.editingContainer}>
+                <TextInput
+                  style={styles.inputField}
+                  placeholder="Senha Atual"
+                  secureTextEntry
+                  value={currentPassword}
+                  onChangeText={setCurrentPassword}
+                />
+                <TextInput
+                  style={styles.inputField}
+                  placeholder="Nova Senha"
+                  secureTextEntry
+                  value={newPassword}
+                  onChangeText={setNewPassword}
+                />
+                <TouchableOpacity
+                  style={styles.saveButtonFull}
+                  onPress={handleSavePassword}
+                >
+                  <Text style={styles.saveButtonText}>Salvar Alterações</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
 
           <View style={[styles.infoRow, { borderBottomWidth: 0 }]}>
@@ -114,7 +210,7 @@ export default function User() {
 
         <Text style={styles.versionText}>Versão 1.0.0</Text>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -216,5 +312,36 @@ const styles = StyleSheet.create({
     color: "#A0AEC0",
     fontSize: 12,
     marginTop: 20,
+  },
+  passwordHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "100%",
+  },
+  editingContainer: {
+    width: "100%",
+    marginTop: 15,
+    paddingLeft: 55,
+  },
+  inputField: {
+    backgroundColor: "#F7FAFC",
+    borderWidth: 1,
+    borderColor: "#E2E8F0",
+    borderRadius: 8,
+    padding: 10,
+    marginBottom: 10,
+    fontSize: 14,
+    color: "#2D3748",
+  },
+  saveButtonFull: {
+    backgroundColor: "#00875F",
+    padding: 12,
+    borderRadius: 8,
+    alignItems: "center",
+    marginTop: 5,
+  },
+  saveButtonText: {
+    fontWeight: "bold",
+    color: "#FFF",
   },
 });

@@ -912,6 +912,9 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
+      "NUnit.Analyzers/4.12.0": {
+        "type": "package"
+      },
       "Swashbuckle.AspNetCore/6.6.2": {
         "type": "package",
         "dependencies": {
@@ -3151,6 +3154,22 @@
         "mono.texttemplating.nuspec"
       ]
     },
+    "NUnit.Analyzers/4.12.0": {
+      "sha512": "QuEHoNlYPyjX+MUNLgj5WquT4MFFJIhIVjbZelP13z6hQP5eCl/7QgSCA0xxhTJLnrMkc7QcnEp2lTchx5pHYA==",
+      "type": "package",
+      "path": "nunit.analyzers/4.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/nunit.analyzers.codefixes.dll",
+        "analyzers/dotnet/cs/nunit.analyzers.dll",
+        "docs/README.md",
+        "images/nunit_256.png",
+        "license.txt",
+        "nunit.analyzers.4.12.0.nupkg.sha512",
+        "nunit.analyzers.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/6.6.2": {
       "sha512": "+NB4UYVYN6AhDSjW0IJAd1AGD8V33gemFNLPaxKTtPkHB+HaKAKf9MGAEUPivEWvqeQfcKIw8lJaHq6LHljRuw==",
       "type": "package",
@@ -4198,6 +4217,7 @@
       "Microsoft.EntityFrameworkCore >= 8.0.25",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.25",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.25",
+      "NUnit.Analyzers >= 4.12.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -4272,6 +4292,12 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.25, )"
+          },
+          "NUnit.Analyzers": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[4.12.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
