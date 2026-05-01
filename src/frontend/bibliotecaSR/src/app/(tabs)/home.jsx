@@ -85,6 +85,9 @@ export default function Home() {
             returnKeyType="search"
             onSubmitEditing={handleSearch}
             autoCapitalize="none"
+          <TextInput
+            placeholder="Busca por título"
+            style={styles.searchInput}
           />
         </View>
       </View>

@@ -81,6 +81,12 @@ export default function Emprestimos() {
           <Text style={styles.emptyText}>Nenhum histórico encontrado.</Text>
         )}
       </ScrollView>
+import { StyleSheet, Text, View } from "react-native";
+
+export default function Emprestimos() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>🎉 Emprestimos!</Text>
     </View>
   );
 }
@@ -106,4 +112,6 @@ const styles = StyleSheet.create({
   limitText: { color: "#666", fontSize: 14, fontWeight: "500" },
   listContent: { paddingBottom: 100 },
   emptyText: { textAlign: "center", marginTop: 50, color: "#999" },
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  text: { fontSize: 20, fontWeight: "bold" },
 });
