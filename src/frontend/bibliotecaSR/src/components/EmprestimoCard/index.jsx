@@ -11,7 +11,34 @@ export default function EmprestimoCard({ emprestimo }) {
   };
 
   const handleRenova = () => {
-    Alert.alert("Renovar", `Botão clicado para renovar"`);
+    Alert.alert(
+      "Confirmar Renovação",
+      `Deseja solicitar a renovação de "${emprestimo.titulo}"?`,
+      [
+        { text: "Cancelar", style: "cancel" },
+        {
+          text: "Renovar",
+          onPress: async () => {
+            try {
+              const response = await api.post(`/renovacoes/${emprestimo.id}`);
+
+              Alert.alert(
+                "Sucesso!",
+                "Sua renovação foi solicitada e está em análise.",
+              );
+            } catch (error) {
+              if (error.response) {
+                const mensagem = error.response.data;
+                Alert.alert("Atenção", mensagem);
+              } else {
+                console.error("Erro crítico:", error);
+                Alert.alert("Erro", "Não foi possível conectar ao servidor.");
+              }
+            }
+          },
+        },
+      ],
+    );
   };
 
   return (

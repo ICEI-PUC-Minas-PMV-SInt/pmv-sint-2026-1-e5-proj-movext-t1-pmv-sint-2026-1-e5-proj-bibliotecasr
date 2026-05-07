@@ -8,22 +8,19 @@ namespace BibliotecaSR.Models
     {
         [Key]
         public int Id { get; set; }
-
         [Required]
         public int EmprestimoId { get; set; }
         public Emprestimo Emprestimo { get; set; }
-
-        public DateTime DataSolicitacao { get; set; } = DateTime.UtcNow;
-
-        public StatusRenovacao Status { get; set; } = StatusRenovacao.Pendente;
+        public DateTime DataSolicitacao { get; set; } = DateTime.Now;
+        public DateTime DataAtualizacao { get; set; } = DateTime.Now;
+        public StatusRenovacao Status { get; set; } = StatusRenovacao.EmAnalise;
     }
 
     public enum StatusRenovacao
     {
-        Pendente,
+        EmAnalise,
         Cancelada,
-        Confirmada,
-        NaoEfetivada,
-        Encerrada
+        Aprovada,
+        NaoEfetivada
     }
 }

@@ -33,7 +33,7 @@ namespace BibliotecaSR.Controllers
         public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesPendentes()
         {
             var reservas = await _context.Renovacoes
-                .Where(r => r.Status == StatusRenovacao.Pendente)
+                .Where(r => r.Status == StatusRenovacao.EmAnalise)
                 .OrderBy(r => r.DataSolicitacao)
                 .Include(r => r.Emprestimo)
                     .ThenInclude(e => e.Usuario)
@@ -50,7 +50,7 @@ namespace BibliotecaSR.Controllers
         public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesConfirmadas()
         {
             var renovacoes = await _context.Renovacoes
-                .Where(r => r.Status == StatusRenovacao.Confirmada)
+                .Where(r => r.Status == StatusRenovacao.Aprovada)
                 .OrderBy(r => r.DataSolicitacao)
                 .Include(r => r.Emprestimo)
                     .ThenInclude(e => e.Usuario)
@@ -63,7 +63,7 @@ namespace BibliotecaSR.Controllers
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpGet("naoefetivadas")]
+        [HttpGet("naoe-fetivadas")]
         public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesNaoEfetivadas()
         {
             var renovacoes = await _context.Renovacoes
@@ -94,12 +94,15 @@ namespace BibliotecaSR.Controllers
 
             var renovacoes = await _context.Renovacoes
                 .Where(r => r.Emprestimo.UsuarioId == userId)
+                .OrderByDescending(r => r.DataAtualizacao)
                 .Select(r => new
                 {
                     r.Id,
                     r.Status,
                     r.DataSolicitacao,
-                    Livro = r.Emprestimo.Exemplar.Item.Titulo
+                    r.DataAtualizacao,
+                    Titulo = r.Emprestimo.Exemplar.Item.Titulo,
+                    Autor = r.Emprestimo.Exemplar.Item.Autor,
                 })
                 .ToListAsync();
 
@@ -136,10 +139,10 @@ namespace BibliotecaSR.Controllers
             }
 
             // Existe alguma reserva para esse item?
-           
+
             var existeReserva = await _context.Reservas
                 .AnyAsync(r => r.ItemId == itemId
-                && r.Status == StatusReserva.Ativa);
+                && (r.Status == StatusReserva.EmAnalise || r.Status == StatusReserva.AguardandoRetirada));
 
             if (existeReserva)
             {
@@ -149,7 +152,9 @@ namespace BibliotecaSR.Controllers
             // Existe alguma solicitação de renovação para esse emprestimo?
 
             var jaExiste = await _context.Renovacoes
-                .AnyAsync(r => r.EmprestimoId == emprestimoId);
+                .AnyAsync(r => r.EmprestimoId == emprestimoId
+                 && r.Status != StatusRenovacao.Cancelada);
+
 
             if (jaExiste)
                 return BadRequest("Você já solicitou uma renovação para esse empréstimo.");
@@ -192,10 +197,11 @@ namespace BibliotecaSR.Controllers
             if (renovacao.Emprestimo.UsuarioId != userId)
                 return Forbid();
 
-            if (renovacao.Status != StatusRenovacao.Pendente)
+            if (renovacao.Status != StatusRenovacao.EmAnalise)
                 return BadRequest("Só é possível cancelar solicitações pendentes.");
 
             renovacao.Status = StatusRenovacao.Cancelada;
+            renovacao.DataAtualizacao = DateTime.Now;
 
             await _context.SaveChangesAsync();
 
@@ -203,17 +209,32 @@ namespace BibliotecaSR.Controllers
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpPut("{id}/confirmar")]
+        [HttpPut("{id}/aprovar")]
         public async Task<ActionResult> Confirmar(int id)
         {
             var renovacao = await _context.Renovacoes
                 .Include(r => r.Emprestimo)
+                    .ThenInclude(e => e.Exemplar)
+                        .ThenInclude(ex => ex.Item)
                 .FirstOrDefaultAsync(r => r.Id == id);
 
             if (renovacao == null)
                 return NotFound();
 
-            renovacao.Status = StatusRenovacao.Confirmada;
+            if (renovacao.Status != StatusRenovacao.EmAnalise)
+                return BadRequest("Só é possível aprovar solicitações pendentes.");
+
+            renovacao.Status = StatusRenovacao.Aprovada;
+            renovacao.DataAtualizacao = DateTime.Now;
+
+            var notificacao = new Notificacao
+            {
+                UsuarioId = renovacao.Emprestimo.UsuarioId,
+                Mensagem = $"Sua renovação de '{renovacao.Emprestimo.Exemplar.Item.Titulo}' foi aprovada!",
+                Tipo = TipoNotificacao.Sucesso
+            };
+
+            _context.Notificacoes.Add(notificacao);
 
             await _context.SaveChangesAsync();
 
@@ -221,31 +242,32 @@ namespace BibliotecaSR.Controllers
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpPut("{id}/naoefetivada")]
+        [HttpPut("{id}/nao-efetivada")]
         public async Task<ActionResult> NaoEfetivada(int id)
         {
-            var renovacao = await _context.Renovacoes.FindAsync(id);
+            var renovacao = await _context.Renovacoes
+                .Include(r => r.Emprestimo)
+                    .ThenInclude(e => e.Exemplar)
+                        .ThenInclude(ex => ex.Item)
+            .FirstOrDefaultAsync(r => r.Id == id);
 
             if (renovacao == null)
                 return NotFound();
+
+            if (renovacao.Status != StatusRenovacao.EmAnalise)
+                return BadRequest("Só é possível marcar como não efetivada as solicitações pendentes.");
 
             renovacao.Status = StatusRenovacao.NaoEfetivada;
+            renovacao.DataAtualizacao = DateTime.Now;
 
-            await _context.SaveChangesAsync();
+            var notificacao = new Notificacao
+            {
+                UsuarioId = renovacao.Emprestimo.UsuarioId,
+                Mensagem = $"Não foi possível efetivar sua renovação de '{renovacao.Emprestimo.Exemplar.Item.Titulo}'.",
+                Tipo = TipoNotificacao.Erro
+            };
 
-            return NoContent();
-        }
-
-        [Authorize(Roles = "Funcionario")]
-        [HttpPut("{id}/encerrar")]
-        public async Task<ActionResult> Encerrar(int id)
-        {
-            var renovacao = await _context.Renovacoes.FindAsync(id);
-
-            if (renovacao == null)
-                return NotFound();
-
-            renovacao.Status = StatusRenovacao.Encerrada;
+            _context.Notificacoes.Add(notificacao);
 
             await _context.SaveChangesAsync();
 

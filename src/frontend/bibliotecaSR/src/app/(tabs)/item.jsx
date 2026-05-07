@@ -57,7 +57,34 @@ export default function Item() {
   };
 
   const handleReserva = () => {
-    Alert.alert("Reserva", `Botão clicado para reservar "${item.titulo}`);
+    Alert.alert(
+      "Confirmar Reserva",
+      `Deseja solicitar a reserva de "${item.titulo}"?`,
+      [
+        { text: "Cancelar", style: "cancel" },
+        {
+          text: "Reservar",
+          onPress: async () => {
+            try {
+              const response = await api.post(`/reservas/${item.id}`);
+
+              Alert.alert(
+                "Sucesso!",
+                "Sua reserva foi solicitada e está em análise.",
+              );
+            } catch (error) {
+              if (error.response) {                
+                const mensagem = error.response.data;
+                Alert.alert("Atenção", mensagem);
+              } else {                
+                console.error("Erro crítico:", error);
+                Alert.alert("Erro", "Não foi possível conectar ao servidor.");
+              }
+            }
+          },
+        },
+      ],
+    );
   };
 
   if (loading) {

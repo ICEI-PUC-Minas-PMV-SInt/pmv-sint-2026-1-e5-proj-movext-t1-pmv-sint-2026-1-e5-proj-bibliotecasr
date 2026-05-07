@@ -15,6 +15,7 @@ namespace BibliotecaSR.Models
         public DbSet<Reserva> Reservas { get; set; }
         public DbSet<Renovacao> Renovacoes { get; set; }
         public DbSet<Evento> Eventos { get; set; }
+        public DbSet<Notificacao> Notificacoes { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
