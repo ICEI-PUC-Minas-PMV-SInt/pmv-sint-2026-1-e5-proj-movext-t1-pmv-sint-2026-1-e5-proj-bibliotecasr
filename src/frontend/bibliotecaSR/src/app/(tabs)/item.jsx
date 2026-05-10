@@ -194,7 +194,7 @@ export default function Item() {
         <View style={styles.noteBox}>
           <Info size={20} color="#666" />
           <Text style={styles.noteText}>
-            A reserva garante a retirada do item por até 48 horas após a
+            A reserva garante a retirada do item por até 3 dias após a
             confirmação.
           </Text>
         </View>

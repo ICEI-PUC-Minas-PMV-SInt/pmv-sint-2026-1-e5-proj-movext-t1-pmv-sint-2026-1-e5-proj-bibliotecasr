@@ -235,7 +235,7 @@ namespace BibliotecaSR.Controllers
             var notificacao = new Notificacao
             {
                 UsuarioId = reserva.UsuarioId,
-                Mensagem = $"Sua reserva de '{reserva.Item.Titulo}' foi aprovada! Retire até {reserva.DataLimiteRetirada}.",
+                Mensagem = $"Sua reserva de '{reserva.Item.Titulo}' foi aprovada! Retire até {reserva.DataLimiteRetirada:dd/MM/yyyy}.",
                 Tipo = TipoNotificacao.Sucesso
             };
 

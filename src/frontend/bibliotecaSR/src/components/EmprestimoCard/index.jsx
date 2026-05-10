@@ -1,5 +1,6 @@
 import { Calendar, Clock, Info, RefreshCw } from "lucide-react-native";
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import api from "../../services/api";
 
 export default function EmprestimoCard({ emprestimo }) {
   const formatDate = (dateString) => {
@@ -173,8 +174,8 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   cardLate: {
-    borderColor: "#FEB2B2", // Borda levemente avermelhada
-    backgroundColor: "#FFF5F5", // Fundo sutilmente rosado para destacar o erro
+    borderColor: "#FEB2B2", 
+    backgroundColor: "#FFF5F5", 
   },
   lateBadge: {
     flexDirection: "row",

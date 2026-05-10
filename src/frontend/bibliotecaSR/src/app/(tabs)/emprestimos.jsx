@@ -33,14 +33,9 @@ export default function Emprestimos() {
   };
 
   return (
-    <View style={styles.container}>
       <ScrollView
-        contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitleHeader}>Meus Empréstimos</Text>
-        </View>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Em Aberto</Text>
           <View style={styles.limitBadge}>
@@ -74,17 +69,14 @@ export default function Emprestimos() {
           <Text style={styles.emptyText}>Nenhum histórico encontrado.</Text>
         )}
       </ScrollView>
-    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#FFF", paddingHorizontal: 20 },
   sectionHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 30,
     marginBottom: 20,
   },
   sectionTitleHeader: { fontSize: 24, fontWeight: "bold", color: "#1A1A1A" },

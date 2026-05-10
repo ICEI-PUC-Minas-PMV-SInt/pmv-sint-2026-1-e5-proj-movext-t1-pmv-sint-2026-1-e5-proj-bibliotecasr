@@ -161,6 +161,34 @@ namespace BibliotecaSR.Migrations
                     b.ToTable("Itens");
                 });
 
+            modelBuilder.Entity("BibliotecaSR.Models.Notificacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Lida")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Mensagem")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Tipo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notificacoes");
+                });
+
             modelBuilder.Entity("BibliotecaSR.Models.Renovacao", b =>
                 {
                     b.Property<int>("Id")
@@ -168,6 +196,9 @@ namespace BibliotecaSR.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataSolicitacao")
                         .HasColumnType("datetime2");
@@ -192,6 +223,12 @@ namespace BibliotecaSR.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataLimiteRetirada")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataSolicitacao")
                         .HasColumnType("datetime2");

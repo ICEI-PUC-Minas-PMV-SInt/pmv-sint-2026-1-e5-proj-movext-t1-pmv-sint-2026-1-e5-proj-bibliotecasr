@@ -255,6 +255,52 @@
         }
       }
     },
+    "/api/usuarios/{usuarioId}/notificacoes": {
+      "get": {
+        "tags": [
+          "Notificacoes"
+        ],
+        "parameters": [
+          {
+            "name": "usuarioId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Notificacoes/marcar-lida/{id}": {
+      "put": {
+        "tags": [
+          "Notificacoes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Renovacoes": {
       "get": {
         "tags": [
@@ -343,7 +389,7 @@
         }
       }
     },
-    "/api/Renovacoes/naoefetivadas": {
+    "/api/Renovacoes/naoe-fetivadas": {
       "get": {
         "tags": [
           "Renovacoes"
@@ -450,7 +496,7 @@
         }
       }
     },
-    "/api/Renovacoes/{id}/confirmar": {
+    "/api/Renovacoes/{id}/aprovar": {
       "put": {
         "tags": [
           "Renovacoes"
@@ -473,30 +519,7 @@
         }
       }
     },
-    "/api/Renovacoes/{id}/naoefetivada": {
-      "put": {
-        "tags": [
-          "Renovacoes"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Renovacoes/{id}/encerrar": {
+    "/api/Renovacoes/{id}/nao-efetivada": {
       "put": {
         "tags": [
           "Renovacoes"
@@ -531,7 +554,7 @@
         }
       }
     },
-    "/api/Reservas/ativas": {
+    "/api/Reservas/pendentes": {
       "get": {
         "tags": [
           "Reservas"
@@ -570,6 +593,82 @@
       }
     },
     "/api/Reservas/confirmadas": {
+      "get": {
+        "tags": [
+          "Reservas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reserva"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reserva"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reserva"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Reservas/desistencia": {
+      "get": {
+        "tags": [
+          "Reservas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reserva"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reserva"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Reserva"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Reservas/expiradas": {
       "get": {
         "tags": [
           "Reservas"
@@ -699,7 +798,7 @@
         }
       }
     },
-    "/api/Reservas/{id}/naoefetivada": {
+    "/api/Reservas/{id}/nao-efetivada": {
       "put": {
         "tags": [
           "Reservas"
@@ -722,7 +821,7 @@
         }
       }
     },
-    "/api/Reservas/{id}/encerrar": {
+    "/api/Reservas/{id}/concluida": {
       "put": {
         "tags": [
           "Reservas"
@@ -737,6 +836,18 @@
               "format": "int32"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reservas/encerrar-expiradas": {
+      "put": {
+        "tags": [
+          "Reservas"
         ],
         "responses": {
           "200": {
@@ -835,6 +946,46 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/atrasos/{userId}": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusEmprestimosDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusEmprestimosDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusEmprestimosDTO"
+                }
+              }
+            }
           }
         }
       }
@@ -1100,6 +1251,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "dataAtualizacao": {
+            "type": "string",
+            "format": "date-time"
+          },
           "status": {
             "$ref": "#/components/schemas/StatusRenovacao"
           }
@@ -1135,6 +1290,15 @@
             "type": "string",
             "format": "date-time"
           },
+          "dataAtualizacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataLimiteRetirada": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
           "status": {
             "$ref": "#/components/schemas/StatusReserva"
           }
@@ -1158,6 +1322,21 @@
         "type": "integer",
         "format": "int32"
       },
+      "StatusEmprestimosDTO": {
+        "type": "object",
+        "properties": {
+          "temAtraso": {
+            "type": "boolean"
+          },
+          "venceHoje": {
+            "type": "boolean"
+          },
+          "venceLogo": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "StatusExemplar": {
         "enum": [
           0,
@@ -1171,8 +1350,7 @@
           0,
           1,
           2,
-          3,
-          4
+          3
         ],
         "type": "integer",
         "format": "int32"
@@ -1183,7 +1361,8 @@
           1,
           2,
           3,
-          4
+          4,
+          5
         ],
         "type": "integer",
         "format": "int32"

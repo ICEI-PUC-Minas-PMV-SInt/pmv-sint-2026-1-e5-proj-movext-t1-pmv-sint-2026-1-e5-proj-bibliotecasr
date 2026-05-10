@@ -1,12 +1,5 @@
 import { Tabs } from "expo-router";
-import {
-  Bookmark,
-  BookOpen,
-  Calendar,
-  Home,
-  RotateCw,
-  User,
-} from "lucide-react-native";
+import { Calendar, Home, User } from "lucide-react-native";
 
 export default function TabsLayout() {
   return (
@@ -30,28 +23,25 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="emprestimos"
         options={{
-          title: "Empréstimos",
-          tabBarIcon: ({ color }) => <BookOpen color={color} size={24} />,
+          href: null,
         }}
       />
       <Tabs.Screen
         name="reservas"
         options={{
-          title: "Reservas",
-          tabBarIcon: ({ color }) => <Bookmark color={color} size={24} />,
+          href: null,
         }}
       />
       <Tabs.Screen
         name="renovacoes"
         options={{
-          title: "Renovações",
-          tabBarIcon: ({ color }) => <RotateCw color={color} size={24} />,
+          href: null,
         }}
       />
       <Tabs.Screen
-        name="user"
+        name="userArea"
         options={{
-          title: "User",
+          title: "Usuário",
           tabBarIcon: ({ color }) => <User color={color} size={24} />,
         }}
       />
@@ -68,7 +58,6 @@ export default function TabsLayout() {
           href: null,
         }}
       />
-
     </Tabs>
   );
 }

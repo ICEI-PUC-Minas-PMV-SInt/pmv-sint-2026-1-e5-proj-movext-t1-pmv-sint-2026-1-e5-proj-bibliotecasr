@@ -1,24 +1,33 @@
 import { useNavigation } from "@react-navigation/native";
 import { useRouter } from "expo-router";
-import { AlertCircle, CheckCircle2, Search } from "lucide-react-native";
+import { AlertTriangle, Search } from "lucide-react-native";
 import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from "react-native";
+import Header from "../../components/Header";
 import ItemCard from "../../components/ItemCard";
+import NotificationCard from "../../components/NotificationCard";
+import { useAuth } from "../../context/authContext";
 import api from "../../services/api";
 
 export default function Home() {
+  const { user } = useAuth();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [notifications, setNotifications] = useState([]);
+  const [statusEmprestimo, setStatusEmprestimo] = useState({
+    temAtraso: false,
+    venceHoje: false,
+    venceLogo: false,
+  });
   const navigation = useNavigation();
 
   const router = useRouter();
@@ -35,8 +44,32 @@ export default function Home() {
   };
 
   useEffect(() => {
-    getNewItems();
+    const carregarDadosIniciais = async () => {
+      setLoading(true);
+      try {
+        await Promise.all([
+          getNewItems(),
+          getNotifications(),
+          verificarStatusEmprestimos(),
+        ]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    carregarDadosIniciais();
   }, []);
+
+  const verificarStatusEmprestimos = async () => {
+    try {
+      const response = await api.get(`/Usuarios/atrasos/${user.id}`);
+      setStatusEmprestimo(response.data);
+    } catch (error) {
+      console.error(error);
+      Alert.alert("Erro", "Não foi possível carregar os atrasos.");
+    } finally {
+    }
+  };
 
   const getNewItems = async () => {
     try {
@@ -53,20 +86,41 @@ export default function Home() {
     }
   };
 
-  return (
-    <ScrollView style={styles.container}>
-      <View style={styles.headerContainer}>
-        <View style={styles.topBar}>
-          <View style={styles.logoRow}>
-            <Image
-              source={require("../../../assets/logo_bibilioteca.png")}
-              style={styles.logo}
-              resizeMode="contain"
-            />
-            <Text style={styles.logoText}>Biblioteca Arthur Riedel</Text>
-          </View>
-        </View>
+  const getNotifications = async () => {
+    try {
+      const response = await api.get(`/usuarios/${user.id}/notificacoes`);
+      const notificacoesNaoLidas = response.data.filter(
+        (n) => n.lida === false,
+      );
+      setNotifications(notificacoesNaoLidas);
+    } catch (error) {
+      console.error(error);
+      Alert.alert("Erro", "Não foi possível carregar as notificações");
+    } finally {
+    }
+  };
 
+  const BannerAlerta = ({ titulo, mensagem, cor }) => (
+    <View
+      style={[
+        styles.containerAtraso,
+        { backgroundColor: cor, marginBottom: 8 },
+      ]}
+    >
+      <View style={styles.contentAtraso}>
+        <AlertTriangle color="#FFF" size={24} />
+        <View style={styles.textContainer}>
+          <Text style={styles.tituloAtraso}>{titulo}</Text>
+          <Text style={styles.mensagemAtraso}>{mensagem}</Text>
+        </View>
+      </View>
+    </View>
+  );
+
+  return (
+    <View style={styles.container}>
+      <ScrollView style={styles.container}>
+        <Header />
         <View style={styles.searchBar}>
           <Search color="#999" size={20} />
           <TextInput
@@ -79,79 +133,72 @@ export default function Home() {
             autoCapitalize="none"
           />
         </View>
-      </View>
 
-      {/* NOTIFICAÇÕES */}
-      <View style={styles.content}>
-        <Text style={styles.sectionTitle}>Notificações</Text>
+        <View style={{ paddingHorizontal: 16, marginTop: 10 }}>
+          {statusEmprestimo.temAtraso && (
+            <BannerAlerta
+              titulo="Atenção: Empréstimo em Atraso!"
+              mensagem="Compareça à biblioteca e regularize sua situação."
+              cor="#C53030"
+            />
+          )}
 
-        <View
-          style={[
-            styles.alertCard,
-            { backgroundColor: "#FFF5F5", borderColor: "#FEB2B2" },
-          ]}
-        >
-          <AlertCircle color="#C53030" size={20} />
-          <Text style={styles.alertText}>
-            Devolução atrasada: "Cem Anos de Solidão".
-          </Text>
+          {statusEmprestimo.venceHoje && (
+            <BannerAlerta
+              titulo="Atenção: Empréstimo vence hoje"
+              mensagem="Não esqueça de devolver ou renovar ainda hoje."
+              cor="#DD6B20"
+            />
+          )}
+
+          {statusEmprestimo.venceLogo && (
+            <BannerAlerta
+              titulo="Lembrete: Devolução Próxima"
+              mensagem="Você possui empréstimos que vencem nos próximos dias."
+              cor="#44c1fc"
+            />
+          )}
         </View>
 
-        <View
-          style={[
-            styles.alertCard,
-            { backgroundColor: "#F0FFF4", borderColor: "#9AE6B4" },
-          ]}
-        >
-          <CheckCircle2 color="#2F855A" size={20} />
-          <Text style={styles.alertText}>Reserva pronta: "O Alquimista".</Text>
-        </View>
+        <View style={styles.content}>
+          {/* NOTIFICAÇÕES */}
+          {notifications.length > 0 && (
+            <>
+              <Text style={styles.sectionTitle}>Notificações</Text>
+              {notifications.map((notif) => (
+                <NotificationCard
+                  key={notif.id}
+                  id={notif.id}
+                  tipo={notif.tipo}
+                  mensagem={notif.mensagem}
+                  setNotifications={setNotifications}
+                />
+              ))}
+            </>
+          )}
 
-        <View style={styles.sectionHeaderRow}>
-          <Text style={styles.sectionTitle}>Novidades do Acervo</Text>
-        </View>
+          <View style={styles.sectionHeaderRow}>
+            <Text style={styles.sectionTitle}>Novidades do Acervo</Text>
+          </View>
 
-        {/* LIVROS RECENTES */}
-        {loading ? (
-          <ActivityIndicator
-            size="large"
-            color="#00875F"
-            style={{ marginTop: 20 }}
-          />
-        ) : (
-          items.map((item) => <ItemCard key={item.id} item={item} />)
-        )}
-      </View>
-    </ScrollView>
+          {/* LIVROS RECENTES */}
+          {loading ? (
+            <ActivityIndicator
+              size="large"
+              color="#00875F"
+              style={{ marginTop: 20 }}
+            />
+          ) : (
+            items.map((item) => <ItemCard key={item.id} item={item} />)
+          )}
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#F7FAFC" },
-  headerContainer: {
-    backgroundColor: "#FFF",
-    padding: 20,
-    paddingBottom: 15,
-    paddingTop: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#EDF2F7",
-  },
-  topBar: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 15,
-    marginTop: 10,
-  },
-  logoRow: { flexDirection: "row", alignItems: "center" },
-  logoText: { fontSize: 18, fontWeight: "bold", color: "#2D3748" },
-
-  logo: {
-    width: 30,
-    height: 30,
-    marginRight: 5,
-  },
-
   searchBar: {
     flexDirection: "row",
     alignItems: "center",
@@ -159,9 +206,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderRadius: 12,
     height: 45,
+    marginTop: 10,
+    marginHorizontal: 20,
   },
   searchInput: { flex: 1, marginLeft: 10, fontSize: 15 },
-
   content: { padding: 20 },
   sectionTitle: {
     fontSize: 18,
@@ -173,18 +221,37 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 20,
     marginBottom: 12,
   },
   seeAll: { color: "#00875F", fontWeight: "600" },
+  containerAtraso: {
+    backgroundColor: "#C53030",
+    marginTop: 14,
 
-  alertCard: {
+    marginHorizontal: 16,
+    borderRadius: 12,
+    padding: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+  },
+  contentAtraso: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 15,
-    borderRadius: 12,
-    borderWidth: 1,
-    marginBottom: 10,
   },
-  alertText: { marginLeft: 10, fontSize: 14, color: "#2D3748", flex: 1 },
+  textContainer: {
+    marginLeft: 12,
+    flex: 1,
+  },
+  tituloAtraso: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  mensagemAtraso: {
+    color: "#FEE2E2",
+    fontSize: 13,
+    marginTop: 2,
+  },
 });

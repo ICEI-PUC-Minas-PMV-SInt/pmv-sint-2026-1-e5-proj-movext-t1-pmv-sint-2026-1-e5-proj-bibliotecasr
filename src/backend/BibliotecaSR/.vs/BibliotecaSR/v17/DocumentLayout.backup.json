@@ -1,12 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\",
+  "WorkspaceRootPath": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7578F2AD-C13F-40FB-95D5-B91A93415569}|..\\BibliotecaSR.Tests\\BibliotecaSR.Tests.csproj|c:\\users\\maria fernanda\\onedrive\\\u00E1rea de trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr.tests\\emprestimotest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7578F2AD-C13F-40FB-95D5-B91A93415569}|..\\BibliotecaSR.Tests\\BibliotecaSR.Tests.csproj|c:\\users\\maria fernanda\\onedrive\\\u00E1rea de trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr.tests\\itemtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
             },
             {
               "$type": "Bookmark",
@@ -39,29 +41,33 @@
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmprestimoTest.cs",
-              "DocumentMoniker": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR.Tests\\EmprestimoTest.cs",
-              "RelativeDocumentMoniker": "..\\BibliotecaSR.Tests\\EmprestimoTest.cs",
-              "ToolTip": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR.Tests\\EmprestimoTest.cs",
-              "RelativeToolTip": "..\\BibliotecaSR.Tests\\EmprestimoTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T22:17:20.511Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ItemTest.cs",
-              "DocumentMoniker": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR.Tests\\ItemTest.cs",
-              "RelativeDocumentMoniker": "..\\BibliotecaSR.Tests\\ItemTest.cs",
-              "ToolTip": "C:\\Users\\Maria Fernanda\\OneDrive\\\u00C1rea de Trabalho\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR.Tests\\ItemTest.cs",
-              "RelativeToolTip": "..\\BibliotecaSR.Tests\\ItemTest.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAIwIsAAAAAAAAAAAAAAA==",
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Data\\DbSeeder.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "BibliotecaSR\\Data\\DbSeeder.cs",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAgwOwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T22:16:02.571Z",
+              "WhenOpened": "2026-05-10T14:33:15.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "BibliotecaSR\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T14:31:00.556Z",
               "EditorCaption": ""
             }
           ]

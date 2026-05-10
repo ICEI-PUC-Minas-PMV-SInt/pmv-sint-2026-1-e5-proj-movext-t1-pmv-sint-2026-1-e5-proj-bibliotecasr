@@ -54,7 +54,6 @@ export default function RegisterModal({ visible, onClose }) {
             </View>
 
             <View style={styles.divider} />
-            {/* <Text style={styles.sectionTitle}>Visite-nos:</Text> */}
 
             <View style={styles.infoRow}>
               <MapPin size={20} color="#004D36" />

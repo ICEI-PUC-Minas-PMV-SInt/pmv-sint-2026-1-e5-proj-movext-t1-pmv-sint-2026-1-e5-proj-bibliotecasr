@@ -84,6 +84,32 @@ namespace BibliotecaSR.Controllers
             return Ok(new { jwtToken = jwt });
         }
 
+        [HttpGet("atrasos/{userId}")]
+        public async Task<ActionResult<StatusEmprestimosDTO>> GetStatusCompleto(int userId)
+        {
+            var hoje = DateTime.Now.Date;
+            var daquiTresDias = hoje.AddDays(3);
+
+            var emprestimosAtivos = await _context.Emprestimos
+                .Where(e => e.UsuarioId == userId && e.DataDevolucao == null)
+                .ToListAsync();
+
+            var dto = new StatusEmprestimosDTO
+            {
+                // passou da data
+                TemAtraso = emprestimosAtivos.Any(e => e.DataPrevistaDevolucao.Date < hoje),
+
+                // vence hoje
+                VenceHoje = emprestimosAtivos.Any(e => e.DataPrevistaDevolucao.Date == hoje),
+
+                // vence logo
+                VenceLogo = emprestimosAtivos.Any(e => e.DataPrevistaDevolucao.Date > hoje
+                                                    && e.DataPrevistaDevolucao.Date <= daquiTresDias)
+            };
+
+            return Ok(dto);
+        }
+
         private string GenerateJwtToken(Usuario model)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
