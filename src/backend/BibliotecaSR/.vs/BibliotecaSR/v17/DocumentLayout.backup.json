@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,29 +46,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "DbSeeder.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Data\\DbSeeder.cs",
               "RelativeDocumentMoniker": "BibliotecaSR\\Data\\DbSeeder.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Data\\DbSeeder.cs",
               "RelativeToolTip": "BibliotecaSR\\Data\\DbSeeder.cs",
-              "ViewState": "AgIAAMoAAAAAAAAAAAAgwOwAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAGoBAAAAAAAAAAAYwHcBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-10T14:33:15.178Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UsuariosController.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "BibliotecaSR\\Controllers\\UsuariosController.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "BibliotecaSR\\Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFoAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T14:31:00.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T14:31:00.556Z"
             }
           ]
         }

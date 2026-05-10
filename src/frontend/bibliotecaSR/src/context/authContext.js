@@ -1,7 +1,7 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
-import * as SecureStore from "expo-secure-store";
 import { useRouter, useSegments } from "expo-router";
+import * as SecureStore from "expo-secure-store";
 import { jwtDecode } from "jwt-decode";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext({});
 
@@ -30,11 +30,24 @@ export function AuthProvider({ children }) {
   }, [user, segments, loading]);
 
   async function loadStorageData() {
-    const savedToken = await SecureStore.getItemAsync("token");
-    if (savedToken) {
-      setUser({ token: savedToken });
+    try {
+      const savedToken = await SecureStore.getItemAsync("token");
+
+      if (savedToken) {
+        const decoded = jwtDecode(savedToken);
+
+        const userData = {
+          token: savedToken,
+          id: decoded.nameid,
+        };
+
+        setUser(userData);
+      }
+    } catch (error) {
+      console.error("Erro ao carregar usuário", error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }
 
   async function signIn(token) {

@@ -370,6 +370,37 @@ namespace BibliotecaSR.Data
             context.Eventos.AddRange(eventos);
             context.SaveChanges();
 
+            var notificacoes = new List<Notificacao>
+            {
+                new Notificacao
+                {
+                    UsuarioId = 2,
+                    Mensagem = "Primeiro acesso: Altere sua senha para manter sua conta segura.",
+                    DataCriacao = DateTime.Now,
+                    Lida = false,
+                    Tipo = TipoNotificacao.Alerta
+                },
+                new Notificacao
+                {
+                    UsuarioId = 3,
+                    Mensagem = "Primeiro acesso: Altere sua senha para manter sua conta segura.",
+                    DataCriacao = DateTime.Now,
+                    Lida = false,
+                    Tipo = TipoNotificacao.Alerta
+                },
+                new Notificacao
+                {
+                    UsuarioId = 4,
+                    Mensagem = "Primeiro acesso: Altere sua senha para manter sua conta segura.",
+                    DataCriacao = DateTime.Now,
+                    Lida = false,
+                    Tipo = TipoNotificacao.Alerta
+                }
+            };
+
+            context.Notificacoes.AddRange(notificacoes);
+            context.SaveChanges();
+
         }
     }
 }
