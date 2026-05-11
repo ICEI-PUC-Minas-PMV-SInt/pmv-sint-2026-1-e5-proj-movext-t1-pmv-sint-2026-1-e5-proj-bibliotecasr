@@ -1,6 +1,9 @@
 import {
   CheckCircle2,
+  ChevronRight,
   Lock,
+  LogOut,
+  Mail,
   User as UserIcon
 } from "lucide-react-native";
 import { useEffect, useState } from "react";
@@ -10,7 +13,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import { useAuth } from "../../context/authContext";
 import api from "../../services/api";
@@ -18,7 +21,7 @@ import UpdateEmail from "../UpdateEmail";
 import UpdatePassword from "../UpdatePassword";
 
 export default function User({ scrollRef }) {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const [userData, setUserData] = useState("");
   const [loading, setLoading] = useState(true);
   const [showPass, setShowPass] = useState(false);
@@ -89,6 +92,13 @@ export default function User({ scrollRef }) {
       setShowPass(false);
     });
   };
+  
+  const handleSignOut = () => {
+    Alert.alert("Sair do App", "Tem certeza que deseja encerrar sua sessão?", [
+      { text: "Cancelar", style: "cancel" },
+      { text: "Sair", onPress: () => signOut(), style: "destructive" },
+    ]);
+  };
 
   const getSituacaoColor = (status) => {
     switch (status) {
@@ -151,47 +161,57 @@ export default function User({ scrollRef }) {
 
           <Text style={styles.label}>Configurações</Text>
 
-          {!showPass && (
-            <TouchableOpacity
-              style={styles.statusRow}
-              onPress={() => setShowPass(!showPass)}
-            >
-              <Lock size={18} color={"#386a44"} />
-              <Text style={[styles.badgeText]}>Alterar Senha</Text>
+          <View style={[{ marginTop: 15 }]}>
+            {!showPass ? (
+              <TouchableOpacity
+                style={styles.menuItem}
+                onPress={() => setShowPass(true)}
+              >
+                <View style={styles.leftInfo}>
+                  <Lock size={22} color={"#006b3f"} />
+                  <Text style={styles.menuText}>Alterar senha</Text>
+                </View>
+                <ChevronRight size={20} color={"#333"} />
+              </TouchableOpacity>
+            ) : (
+              <UpdatePassword
+                setCurrentPassword={setCurrentPassword}
+                setNewPassword={setNewPassword}
+                showPass={showPass}
+                setShowPass={setShowPass}
+                handleUpdatePassword={handleUpdatePassword}
+              />
+            )}
+
+            {!showEmail ? (
+              <TouchableOpacity
+                style={styles.menuItem}
+                onPress={() => setShowEmail(true)}
+              >
+                <View style={styles.leftInfo}>
+                  <Mail size={22} color={"#006b3f"} />
+                  <Text style={styles.menuText}>Alterar e-mail</Text>
+                </View>
+                <ChevronRight size={20} color={"#333"} />
+              </TouchableOpacity>
+            ) : (
+              <UpdateEmail
+                setCurrentPassword={setCurrentPassword}
+                setNewEmail={setNewEmail}
+                setShowEmail={setShowEmail}
+                handleUpdateEmail={handleUpdateEmail}
+                showEmail={showEmail}
+              />
+            )}
+
+            <TouchableOpacity style={styles.logoutItem} onPress={handleSignOut}>
+              <View style={styles.leftInfo} >
+                <LogOut size={22} color={"#E63946"} />
+                <Text style={styles.logoutText}>Sair da conta</Text>
+              </View>
+              <ChevronRight size={20} color={"#333"} />
             </TouchableOpacity>
-          )}
-
-          {showPass && (
-            <UpdatePassword
-              handleFocus={handleFocus}
-              setCurrentPassword={setCurrentPassword}
-              setNewPassword={setNewPassword}
-              showPass={showPass}
-              setShowPass={setShowPass}
-              handleUpdatePassword={handleUpdatePassword}
-            />
-          )}
-
-          {!showEmail && (
-            <TouchableOpacity
-              style={styles.statusRow}
-              onPress={() => setShowEmail(!showEmail)}
-            >
-              <Lock size={18} color={"#386a44"} />
-              <Text style={[styles.badgeText]}>Alterar Email</Text>
-            </TouchableOpacity>
-          )}
-
-          {showEmail && (
-            <UpdateEmail
-              handleFocus={handleFocus}
-              setCurrentPassword={setCurrentPassword}
-              setNewEmail={setNewEmail}
-              setShowEmail={setShowEmail}
-              handleUpdateEmail={handleUpdateEmail}
-              showEmail={showEmail}
-            />
-          )}
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -281,37 +301,52 @@ const styles = StyleSheet.create({
     marginTop: 5,
     gap: 5,
   },
-
   badgeText: {
     fontSize: 14,
     fontWeight: "bold",
     textTransform: "capitalize",
     color: "#386a44",
   },
-
-  matriculaValue: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#1e293b",
-    marginTop: 5,
-  },
-  bottomNav: {
+  menuItem: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    paddingVertical: 10,
-    backgroundColor: "#fff",
-    borderTopWidth: 1,
-    borderTopColor: "#e2e8f0",
-    position: "absolute",
-    bottom: 0,
-    width: "100%",
-  },
-  navItem: { alignItems: "center", padding: 10 },
-  navItemActive: { borderWidth: 2, borderColor: "#1e293b", borderRadius: 8 },
-  navText: { fontSize: 12, color: "#64748b", marginTop: 4 },
-  infoRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "#FFF",
+    padding: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#E2E8F0",
+    marginBottom: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+  logoutItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundColor: "#FFF5F5",
+    padding: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#FEE2E2",
+    marginBottom: 12,
+  },
+  leftInfo: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+  },
+  menuText: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: "#1A202C",
+  },
+  logoutText: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: "#E63946",
   },
 });

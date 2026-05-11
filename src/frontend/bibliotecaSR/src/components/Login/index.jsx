@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { Eye, EyeOff } from "lucide-react-native";
 import { useAuth } from "../../context/authContext";
 import { auth } from "../../services/auth";
 import RegisterModal from "../RegisterModal";
@@ -15,6 +16,7 @@ import RegisterModal from "../RegisterModal";
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
   const { signIn } = useAuth();
@@ -56,14 +58,27 @@ export default function LoginForm() {
       />
 
       <Text style={styles.label}>Senha</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Digite sua senha"
-        placeholderTextColor="#999"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
+      
+      <View style={styles.passwordContainer}>
+        <TextInput
+          style={styles.inputField} 
+          placeholder="Digite sua senha"
+          placeholderTextColor="#999"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry={!showPassword} 
+        />
+        <TouchableOpacity 
+          style={styles.eyeIcon} 
+          onPress={() => setShowPassword(!showPassword)}
+        >
+          {showPassword ? (
+            <Eye size={22} color="#00875F" />
+          ) : (
+            <EyeOff size={22} color="#999" />
+          )}
+        </TouchableOpacity>
+      </View>
 
       <TouchableOpacity style={styles.button} onPress={() => handleLogin()}>
         <Text style={styles.buttonText}>Entrar</Text>
@@ -94,7 +109,26 @@ const styles = StyleSheet.create({
     color: "#333",
     marginBottom: 8,
   },
-  input: {
+  passwordContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#DDD",
+    borderRadius: 8,
+    marginBottom: 20,
+    backgroundColor: '#FFF',
+  },
+  inputField: {
+    flex: 1,
+    paddingHorizontal: 15,
+    paddingVertical: 12,
+    fontSize: 16,
+    color: "#333",
+  },
+  eyeIcon: {
+    paddingHorizontal: 15,
+  },
+  input: { 
     borderWidth: 1,
     borderColor: "#DDD",
     borderRadius: 8,

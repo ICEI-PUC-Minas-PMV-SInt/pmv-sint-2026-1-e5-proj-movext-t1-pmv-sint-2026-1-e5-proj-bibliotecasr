@@ -1,4 +1,4 @@
-import { useLocalSearchParams, useNavigation, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import {
   ArrowLeft,
   Bookmark,
@@ -26,7 +26,6 @@ import { tipo } from "../../utils/tipoItem.js";
 export default function Item() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
-  const navigation = useNavigation();
 
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -37,8 +36,8 @@ export default function Item() {
   }, [id]);
 
   const handleBack = () => {
-    if (navigation.canGoBack()) {
-      navigation.goBack();
+    if (router.canGoBack()) {
+      router.back();
     } else {
       router.replace("/");
     }
@@ -73,10 +72,10 @@ export default function Item() {
                 "Sua reserva foi solicitada e está em análise.",
               );
             } catch (error) {
-              if (error.response) {                
+              if (error.response) {
                 const mensagem = error.response.data;
                 Alert.alert("Atenção", mensagem);
-              } else {                
+              } else {
                 console.error("Erro crítico:", error);
                 Alert.alert("Erro", "Não foi possível conectar ao servidor.");
               }
@@ -107,7 +106,7 @@ export default function Item() {
           Item não encontrado.
         </Text>
         <TouchableOpacity
-          onPress={() => navigation.goBack()}
+          onPress={handleBack}
           style={{ marginTop: 20, alignSelf: "center" }}
         >
           <Text style={{ color: "#004D36", fontWeight: "bold" }}>Voltar</Text>
