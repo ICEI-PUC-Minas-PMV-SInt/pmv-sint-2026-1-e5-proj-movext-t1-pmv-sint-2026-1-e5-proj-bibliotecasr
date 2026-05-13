@@ -1,3 +1,11 @@
+# Testes Unitários
+
+Esta seção apresenta os testes unitários realizados durante o desenvolvimento da aplicação. Ao todo, foram implementados 51 testes com o objetivo de validar o funcionamento de métodos e funcionalidades do sistema, verificando se os resultados obtidos estavam de acordo com o esperado.
+
+![Testes_unitarios](img/test2.png)
+![Testes_unitarios](img/test1.png)
+
+
 # Planos de Testes de Software
 
 Os cenários de teste apresentados nesta seção têm como objetivo verificar o funcionamento das principais funcionalidades do aplicativo. Esses testes foram elaborados com base nos requisitos funcionais definidos durante a etapa de levantamento e análise do projeto.
