@@ -289,17 +289,17 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center"><br><img src="img/ct07.gif" width="250"></td>
   </tr>
 </table>
 
 <table>
   <tr>
-    <th colspan="6" width="1000">CT08 – Consultar agenda de clubes</th>
+    <th colspan="6" width="1000">CT08 - O sistema deve permitir que o usuário consulte a agenda de clubes da biblioteca</th>
   </tr>
   <tr>
     <td width="170"><strong>Critérios de êxito</strong></td>
-    <td colspan="5">O sistema deve permitir que o usuário consulte a agenda de clubes da biblioteca</td>
+    <td colspan="5"> Verificar se o sistema exibe corretamente a agenda de clubes da biblioteca</td>
   </tr>
   <tr>
     <td><strong>Responsável pelo teste</strong></td>
@@ -309,23 +309,23 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5">xxxxxxxxxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">A agenda foi exibida com sucesso.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center"><br><img src="img/ct08.gif" width="250"></td>
   </tr>
 </table>
 
 <table>
   <tr>
-    <th colspan="6" width="1000">CT09 – Notificação de empréstimo atrasado</th>
+    <th colspan="6" width="1000">CT09 - O sistema deve notificar o usuário quando o seu empréstimo estiver atrasado </th>
   </tr>
   <tr>
     <td width="170"><strong>Critérios de êxito</strong></td>
-    <td colspan="5">O sistema deve notificar o usuário quando o seu empréstimo estiver atrasado</td>
+    <td colspan="5"> Verificar se o sistema notifica o usuário quando existir um empréstimo em atraso</td>
   </tr>
   <tr>
     <td><strong>Responsável pelo teste</strong></td>
@@ -335,23 +335,23 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5">xxxxxxxxxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">O usuário foi notificado com sucesso.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center"><br><img src="img/ct09.gif" width="250" ></td>
   </tr>
 </table>
 
 <table>
   <tr>
-    <th colspan="6" width="1000">CT10 – Consultar status do cadastro</th>
+    <th colspan="6" width="1000">CT10 - Consultar status do cadastro </th>
   </tr>
   <tr>
     <td width="170"><strong>Critérios de êxito</strong></td>
-    <td colspan="5">O sistema deve permitir que o usuário consulte o status do seu cadastro</td>
+    <td colspan="5"> Verificar se o sistema permite que o usuário visualize corretamente a situação do seu cadastro </td>
   </tr>
   <tr>
     <td><strong>Responsável pelo teste</strong></td>
@@ -361,23 +361,23 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5">xxxxxxxxxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">O status do cadastro foi exibido com sucesso.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center"><br><img src="img/ct10.gif" width="250" ></td>
   </tr>
 </table>
 
 <table>
   <tr>
-    <th colspan="6" width="1000">CT11 – Visuaizar histórico de empréstimos</th>
+    <th colspan="6" width="1000">CT11 - Visuaizar histórico de empréstimos </th>
   </tr>
   <tr>
     <td width="170"><strong>Critérios de êxito</strong></td>
-    <td colspan="5">O sistema deve permitir que o usuário visualize seu histórico de empréstimos</td>
+    <td colspan="5"> Verificar se o sistema permite que o usuário visualize o histórico de seus empréstimos realizados </td>
   </tr>
   <tr>
     <td><strong>Responsável pelo teste</strong></td>
@@ -387,14 +387,12 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5">xxxxxxxxxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">O histórico de empréstimos foi exibido com sucesso.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center"><br><img src="img/ct11.gif" width="250" ></td>
   </tr>
 </table>
-
-Apresente imagens e/ou vídeos que comprovam que um determinado teste foi executado, e o resultado esperado foi obtido. Normalmente são screenshots de telas, ou vídeos do software em funcionamento.
