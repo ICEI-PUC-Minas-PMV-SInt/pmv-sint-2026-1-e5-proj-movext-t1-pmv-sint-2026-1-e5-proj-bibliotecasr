@@ -97,13 +97,15 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5"> xxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">O teste foi executado com credenciais válidas e o sistema realizou a autenticação corretamente, redirecionando o usuário para a página inicial sem apresentar falhas, inconsistências visuais ou erros de validação.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center">
+      <img alt="CT01-GIF" src="https://github.com/user-attachments/assets/8e938d96-d7f7-41e8-a469-c0c520c71cf4" width="250">
+    </td>
   </tr>
 </table>
 
@@ -123,15 +125,18 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5"> xxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">A funcionalidade de pesquisa apresentou comportamento conforme esperado, permitindo a inserção do termo de busca e exibindo os resultados relacionados ao item pesquisado de forma adequada, sem falhas no carregamento ou na navegação.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center">
+      <img alt="CT02-GIF" src="https://github.com/user-attachments/assets/ff0fa380-e233-4c2d-a898-3fcc123c6837" width="250">
+    </td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT03 – Vizualizar item</th>
@@ -148,15 +153,18 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5"> xxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">O sistema exibiu corretamente as informações do item selecionado, apresentando os dados de forma organizada e mantendo a navegação estável durante a abertura da tela de detalhes.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center">
+      <img alt="CT03-GIF" src="https://github.com/user-attachments/assets/95a32dff-f595-436a-bea1-5119ed60fe81" width="250">
+    </td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT04 – Solicitação de reserva</th>
@@ -173,15 +181,18 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5"> xxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">A solicitação de reserva foi realizada com sucesso, e o sistema apresentou o comportamento esperado ao registrar a ação e fornecer retorno visual ao usuário, sem ocorrência de erros ou interrupções no fluxo.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center">
+      <img alt="CT04-GIF" src="https://github.com/user-attachments/assets/f5074c39-8af4-43ac-9761-8eef6fde3387" width="250">
+    </td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT05 – Solicitação de renovação de empréstimo</th>
@@ -198,15 +209,18 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5"> xxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">A funcionalidade de renovação de empréstimo apresentou comportamento adequado durante a execução do teste, permitindo a solicitação da renovação e exibindo corretamente a confirmação da operação ao usuário.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center">
+      <img src="img/ct07.gif" width="250">
+    </td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT06 – Notificação de devolução próxima</th>
@@ -223,15 +237,18 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   </tr>
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5"> xxxxxxxxxxxxxxxxx .</td>
+    <td colspan="5">O sistema identificou corretamente a proximidade da data de devolução do empréstimo e apresentou a notificação esperada na tela inicial, mantendo clareza visual e funcionamento estável durante o teste.</td>
   </tr>
   <tr>
     <td colspan="6" align="center"><strong>Evidência</strong></td>
   </tr>
   <tr>
-    <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
+    <td colspan="6" align="center">
+      <img src="img/ct07.gif" width="250">
+    </td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT07 - Notificação de reserva disponível</th>
@@ -257,6 +274,7 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
     <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT08 – Consultar agenda de clubes</th>
@@ -282,6 +300,7 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
     <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT09 – Notificação de empréstimo atrasado</th>
@@ -307,6 +326,7 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
     <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT10 – Consultar status do cadastro</th>
@@ -332,6 +352,7 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
     <td colspan="6" align="center"><br><img src="img/ct07.gif"/></td>
   </tr>
 </table>
+
 <table>
   <tr>
     <th colspan="6" width="1000">CT11 – Visuaizar histórico de empréstimos</th>
