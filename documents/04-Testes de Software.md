@@ -197,26 +197,35 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   <tr>
     <th colspan="6" width="1000">CT05 – Solicitação de renovação de empréstimo</th>
   </tr>
+
   <tr>
     <td width="170"><strong>Critérios de êxito</strong></td>
     <td colspan="5">O sistema deve permitir que o usuário solicite a renovação de um empréstimo</td>
   </tr>
+
   <tr>
     <td><strong>Responsável pelo teste</strong></td>
     <td width="380">Rodrigo</td>
     <td width="150"><strong>Data do Teste</strong></td>
     <td width="150">14/05/2026</td>
   </tr>
+
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5">A funcionalidade de renovação de empréstimo apresentou comportamento adequado durante a execução do teste, permitindo a solicitação da renovação e exibindo corretamente a confirmação da operação ao usuário.</td>
+    <td colspan="5">
+      A funcionalidade de renovação de empréstimo apresentou comportamento adequado durante a execução do teste, permitindo a solicitação da renovação e exibindo corretamente a confirmação da operação ao usuário.
+    </td>
   </tr>
-  <tr>
-    <td colspan="6" align="center"><strong>Evidência</strong></td>
-  </tr>
+
   <tr>
     <td colspan="6" align="center">
-      <img src="img/ct07.gif" width="250">
+      <strong>Evidência</strong>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="6" align="center">
+      <img alt="CT05-GIF" src="https://github.com/user-attachments/assets/4ab4edac-724a-4293-9e1e-d189763dad93" width="250">
     </td>
   </tr>
 </table>
@@ -225,26 +234,35 @@ Os cenários de teste apresentados nesta seção têm como objetivo verificar o 
   <tr>
     <th colspan="6" width="1000">CT06 – Notificação de devolução próxima</th>
   </tr>
+
   <tr>
     <td width="170"><strong>Critérios de êxito</strong></td>
     <td colspan="5">O sistema deve notificar o usuário quando a data de devolução estiver próxima</td>
   </tr>
+
   <tr>
     <td><strong>Responsável pelo teste</strong></td>
     <td width="380">Rodrigo</td>
     <td width="150"><strong>Data do Teste</strong></td>
     <td width="150">14/05/2026</td>
   </tr>
+
   <tr>
     <td width="170"><strong>Comentário</strong></td>
-    <td colspan="5">O sistema identificou corretamente a proximidade da data de devolução do empréstimo e apresentou a notificação esperada na tela inicial, mantendo clareza visual e funcionamento estável durante o teste.</td>
+    <td colspan="5">
+      O sistema identificou corretamente a proximidade da data de devolução do empréstimo e apresentou a notificação esperada na tela inicial, mantendo clareza visual e funcionamento estável durante o teste.
+    </td>
   </tr>
-  <tr>
-    <td colspan="6" align="center"><strong>Evidência</strong></td>
-  </tr>
+
   <tr>
     <td colspan="6" align="center">
-      <img src="img/ct07.gif" width="250">
+      <strong>Evidência</strong>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="6" align="center">
+      <img alt="CT06-GIF" src="https://github.com/user-attachments/assets/14cfea4d-a681-4f09-9f37-7d26d384aa27" width="250">
     </td>
   </tr>
 </table>
