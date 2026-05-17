@@ -1,27 +1,31 @@
 
 # Projeto de Interface
 
+# Fluxo de Telas
+
+<img alt="Login" src="img/fluxodetelas.jpeg" width="650">
 
 # Login
-![Tela Login](img/tela-login.png)
+ 
+<img alt="Login" src="img/tela-login.png" width="250">
 
 # Cadastro
-![Tela Cadastro](img/tela-cadastro.png)
+<img alt="Cadastro" src="img/tela-cadastro.png" width="250">
 
 # Inicio
-![Tela Inicio](img/tela-inicio.png)
+<img alt="Inicio" src="img/tela-inicio.png" width="250">
 
 # Agenda
-![Tela Agenda](img/tela-agenda.png)
+<img alt="Agenda" src="img/tela-agenda.png" width="250">
 
 # Usuario
-![Tela Usuario](img/tela-usuario.png)
+<img alt="Usuario" src="img/tela-usuario.png" width="250">
 
 # Reserva
-![Tela Reserva](img/tela-reserva.png)
+<img alt="Reserva" src="img/tela-reserva.png" width="250">
 
 # Renovações
-![Tela Renovacoes](img/tela-renovacoes.png)
+<img alt="Renovacoes" src="img/tela-renovacoes.png" width="250">
 
 # Emprestimos
-![Tela Emprestimo](img/tela-meuemprestimo.JPG)
+<img alt="Emprestimos" src="img/tela-meuemprestimo.JPG" width="250">
