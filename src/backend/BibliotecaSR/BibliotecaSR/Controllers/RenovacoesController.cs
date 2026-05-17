@@ -32,17 +32,23 @@ namespace BibliotecaSR.Controllers
         [HttpGet("pendentes")]
         public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesPendentes()
         {
-            var reservas = await _context.Renovacoes
+            var renovacoes = await _context.Renovacoes
                 .Where(r => r.Status == StatusRenovacao.EmAnalise)
                 .OrderBy(r => r.DataSolicitacao)
-                .Include(r => r.Emprestimo)
-                    .ThenInclude(e => e.Usuario)
-                .Include(r => r.Emprestimo)
-                    .ThenInclude(e => e.Exemplar)
-                        .ThenInclude(ex => ex.Item)
+                .Select(r => new
+                {
+                    r.Id,
+                    r.Status,
+                    r.DataSolicitacao,
+                    Nome = r.Emprestimo.Usuario.Nome,
+                    Titulo = r.Emprestimo.Exemplar.Item.Titulo,
+                    Autor = r.Emprestimo.Exemplar.Item.Autor,
+                    Emprestimo = r.Emprestimo.Id,
+                    DataRetirada = r.Emprestimo.DataRetirada,
+                    DataPrevistaDevolucao = r.Emprestimo.DataPrevistaDevolucao
+                })
                 .ToListAsync();
-
-            return Ok(reservas);
+            return Ok(renovacoes);
         }
 
         [Authorize(Roles = "Funcionario")]
@@ -52,28 +58,42 @@ namespace BibliotecaSR.Controllers
             var renovacoes = await _context.Renovacoes
                 .Where(r => r.Status == StatusRenovacao.Aprovada)
                 .OrderBy(r => r.DataSolicitacao)
-                .Include(r => r.Emprestimo)
-                    .ThenInclude(e => e.Usuario)
-                .Include(r => r.Emprestimo)
-                    .ThenInclude(e => e.Exemplar)
-                        .ThenInclude(ex => ex.Item)
+                .Select(r => new
+                {
+                    r.Id,
+                    r.Status,
+                    r.DataSolicitacao,
+                    r.DataAtualizacao,
+                    Nome = r.Emprestimo.Usuario.Nome,
+                    Titulo = r.Emprestimo.Exemplar.Item.Titulo,
+                    Autor = r.Emprestimo.Exemplar.Item.Autor,
+                    Emprestimo = r.Emprestimo.Id,
+                    DataRetirada = r.Emprestimo.DataRetirada,
+                })
                 .ToListAsync();
 
             return Ok(renovacoes);
         }
 
         [Authorize(Roles = "Funcionario")]
-        [HttpGet("naoe-fetivadas")]
+        [HttpGet("nao-efetivadas")]
         public async Task<ActionResult<IEnumerable<Renovacao>>> GetRenovacoesNaoEfetivadas()
         {
             var renovacoes = await _context.Renovacoes
                 .Where(r => r.Status == StatusRenovacao.NaoEfetivada)
                 .OrderBy(r => r.DataSolicitacao)
-                .Include(r => r.Emprestimo)
-                    .ThenInclude(e => e.Usuario)
-                .Include(r => r.Emprestimo)
-                    .ThenInclude(e => e.Exemplar)
-                        .ThenInclude(ex => ex.Item)
+                .Select(r => new
+                {
+                    r.Id,
+                    r.Status,
+                    r.DataSolicitacao,
+                    r.DataAtualizacao,
+                    Nome = r.Emprestimo.Usuario.Nome,
+                    Titulo = r.Emprestimo.Exemplar.Item.Titulo,
+                    Autor = r.Emprestimo.Exemplar.Item.Autor,
+                    Emprestimo = r.Emprestimo.Id,
+                    DataRetirada = r.Emprestimo.DataRetirada,
+ })
                 .ToListAsync();
 
             return Ok(renovacoes);
@@ -161,7 +181,7 @@ namespace BibliotecaSR.Controllers
 
             // Emprestimo atrasado?
 
-            if (emprestimo.DataPrevistaDevolucao < DateTime.UtcNow)
+            if (emprestimo.DataPrevistaDevolucao.Date < DateTime.UtcNow.Date)
             {
                 return BadRequest("Empréstimo atrasado. Não é possível renovar.");
             }

@@ -71,7 +71,7 @@ export default function Renovaçoes() {
         ))
       ) : (
         <Text style={styles.emptyText}>
-          Nenhuma renovação ativa no momento.
+          Nenhuma solicitação de renovação ativa no momento.
         </Text>
       )}
 

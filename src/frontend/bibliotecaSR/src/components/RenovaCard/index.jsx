@@ -64,7 +64,7 @@ export default function RenovaCard({ item, onRefresh }) {
           </Text>
         </View>
 
-        {(item.status === 0 || item.status === 2) && (
+        {item.status === 0 && (
           <TouchableOpacity
             style={styles.cancelBtn}
             onPress={() => handleCancelar(item.id)}

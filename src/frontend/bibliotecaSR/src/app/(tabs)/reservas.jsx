@@ -6,12 +6,11 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  View,
+  View
 } from "react-native";
+import ReservaCard from "../../components/ReservaCard/index.jsx";
 import { useAuth } from "../../context/authContext";
 import api from "../../services/api";
-import ReservaCard from "../../components/ReservaCard/index.jsx";
 
 export default function Reservas() {
   const { user } = useAuth();
@@ -67,16 +66,22 @@ export default function Reservas() {
       </View>
 
       {ativas.length > 0 ? (
-        ativas.map((item) => <ReservaCard key={item.id} item={item} onRefresh={onRefresh}/>)
+        ativas.map((item) => (
+          <ReservaCard key={item.id} item={item} onRefresh={onRefresh} />
+        ))
       ) : (
-        <Text style={styles.emptyText}>Nenhuma reserva ativa no momento.</Text>
+        <Text style={styles.emptyText}>
+          Nenhuma solicitação de reserva ativa no momento.
+        </Text>
       )}
 
       <Text style={[styles.sectionTitle, { marginTop: 30, marginBottom: 15 }]}>
         Histórico
       </Text>
       {historico.length > 0 ? (
-        historico.map((item) => <ReservaCard key={item.id} item={item} onRefresh={onRefresh} />)
+        historico.map((item) => (
+          <ReservaCard key={item.id} item={item} onRefresh={onRefresh} />
+        ))
       ) : (
         <Text style={styles.emptyText}>Seu histórico está vazio.</Text>
       )}

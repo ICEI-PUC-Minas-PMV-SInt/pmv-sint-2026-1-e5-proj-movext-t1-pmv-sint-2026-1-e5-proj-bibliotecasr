@@ -265,7 +265,7 @@
   {
     "ContainingType": "BibliotecaSR.Controllers.RenovacoesController",
     "Method": "GetRenovacoesNaoEfetivadas",
-    "RelativePath": "api/Renovacoes/naoe-fetivadas",
+    "RelativePath": "api/Renovacoes/nao-efetivadas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

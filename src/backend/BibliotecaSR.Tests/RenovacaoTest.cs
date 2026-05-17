@@ -111,8 +111,9 @@ namespace BibliotecaSR.Tests
             var okResult = (OkObjectResult)result;
             Assert.NotNull(okResult?.Value);
 
-            var actual = okResult.Value as IEnumerable<Renovacao>;
-            Assert.NotNull(actual);
+            var actual = (okResult.Value as System.Collections.IEnumerable)?
+                    .Cast<dynamic>()
+                    .ToList(); Assert.NotNull(actual);
 
             Assert.That(actual.Count(), Is.EqualTo(2));
         }
@@ -133,8 +134,9 @@ namespace BibliotecaSR.Tests
             var okResult = (OkObjectResult)result;
             Assert.NotNull(okResult?.Value);
 
-            var actual = okResult.Value as IEnumerable<Renovacao>;
-            Assert.NotNull(actual);
+            var actual = (okResult.Value as System.Collections.IEnumerable)?
+                    .Cast<dynamic>()
+                    .ToList(); Assert.NotNull(actual);
 
             Assert.That(actual.Count(), Is.EqualTo(1));
         }
@@ -155,8 +157,9 @@ namespace BibliotecaSR.Tests
             var okResult = (OkObjectResult)result;
             Assert.NotNull(okResult?.Value);
 
-            var actual = okResult.Value as IEnumerable<Renovacao>;
-            Assert.NotNull(actual);
+            var actual = (okResult.Value as System.Collections.IEnumerable)?
+                    .Cast<dynamic>()
+                    .ToList(); Assert.NotNull(actual);
 
             Assert.That(actual.Count(), Is.EqualTo(1));
         }

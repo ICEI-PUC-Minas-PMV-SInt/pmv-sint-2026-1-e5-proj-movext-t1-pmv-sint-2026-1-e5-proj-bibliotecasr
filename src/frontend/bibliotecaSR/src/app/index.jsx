@@ -15,7 +15,6 @@ export default function Index() {
   const [activeTab, setActiveTab] = useState("login");
 
   return (
-    <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" />
 
@@ -72,7 +71,6 @@ export default function Index() {
           </View>
         </View>
       </SafeAreaView>
-    </SafeAreaProvider>
   );
 }
 

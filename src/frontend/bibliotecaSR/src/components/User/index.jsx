@@ -4,7 +4,7 @@ import {
   Lock,
   LogOut,
   Mail,
-  User as UserIcon
+  User as UserIcon,
 } from "lucide-react-native";
 import { useEffect, useState } from "react";
 import {
@@ -92,7 +92,7 @@ export default function User({ scrollRef }) {
       setShowPass(false);
     });
   };
-  
+
   const handleSignOut = () => {
     Alert.alert("Sair do App", "Tem certeza que deseja encerrar sua sessão?", [
       { text: "Cancelar", style: "cancel" },
@@ -205,7 +205,7 @@ export default function User({ scrollRef }) {
             )}
 
             <TouchableOpacity style={styles.logoutItem} onPress={handleSignOut}>
-              <View style={styles.leftInfo} >
+              <View style={styles.leftInfo}>
                 <LogOut size={22} color={"#E63946"} />
                 <Text style={styles.logoutText}>Sair da conta</Text>
               </View>
@@ -220,52 +220,6 @@ export default function User({ scrollRef }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#f8fafc" },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingTop: 30,
-    paddingHorizontal: 20,
-    alignItems: "center",
-    backgroundColor: "#fff",
-  },
-  row: { flexDirection: "row", alignItems: "center" },
-  logoPlaceholder: { width: 32, height: 32, marginRight: 10 },
-  topBar: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 15,
-    marginTop: 10,
-  },
-  logoRow: { flexDirection: "row", alignItems: "center" },
-  logoText: { fontSize: 18, fontWeight: "bold", color: "#2D3748" },
-  logo: {
-    width: 30,
-    height: 30,
-    marginRight: 5,
-  },
-  headerTitle: { fontSize: 20, fontWeight: "bold", color: "#166534" },
-  content: { padding: 20 },
-  sectionTitle: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#1e293b",
-    marginBottom: 20,
-  },
-  tabContainer: {
-    flexDirection: "row",
-    borderBottomWidth: 1,
-    borderBottomColor: "#e2e8f0",
-    marginBottom: 20,
-  },
-  activeTab: {
-    borderBottomWidth: 2,
-    borderBottomColor: "#166534",
-    paddingBottom: 10,
-    marginRight: 20,
-  },
-  activeTabText: { color: "#166534", fontWeight: "bold" },
-  tabText: { color: "#64748b", marginRight: 20 },
   profileCard: {
     flex: 1,
     backgroundColor: "#fff",
@@ -290,7 +244,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#e2e8f0",
   },
-  infoContainer: { padding: 20 },
+  infoContainer: { paddingVertical: 10, paddingHorizontal: 20 },
   userName: { fontSize: 20, fontWeight: "bold", color: "#1e293b" },
   userEmail: { color: "#64748b" },
   divider: { height: 1, backgroundColor: "#f1f5f9", marginVertical: 15 },

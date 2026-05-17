@@ -389,7 +389,7 @@
         }
       }
     },
-    "/api/Renovacoes/naoe-fetivadas": {
+    "/api/Renovacoes/nao-efetivadas": {
       "get": {
         "tags": [
           "Renovacoes"

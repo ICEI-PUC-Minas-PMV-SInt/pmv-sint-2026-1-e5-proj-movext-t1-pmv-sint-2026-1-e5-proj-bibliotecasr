@@ -18,14 +18,28 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     if (loading) return;
 
-    const inAuthGroup = segments[0] === "(tabs)";
+    const currentGroup = segments[0];
+    const isLoggingIn = currentGroup !== "(tabs)" && currentGroup !== "(admin)";
 
-    if (!user && inAuthGroup) {
-      // Se não está logado e tenta entrar nos tabs, volta pro login
+    // 1. Se NÃO está logado e tenta acessar áreas restritas -> Vai pro Login
+    if (!user && (currentGroup === "(tabs)" || currentGroup === "(admin)")) {
       router.replace("/");
-    } else if (user && segments[0] !== "(tabs)") {
-      // Se está logado e está na tela de login, vai pra home
-      router.replace("/(tabs)/home");
+      return;
+    }
+
+    // 2. Se ESTÁ logado
+    if (user) {
+      if (user.role === "Funcionario") {
+        // Admin tentando ir pro login ou pro fluxo do usuário comum -> Redireciona pro Admin
+        if (isLoggingIn || currentGroup === "(tabs)") {
+          router.replace("/(admin)/home");
+        }
+      } else {
+        // Usuário comum tentando ir pro login ou pro fluxo de Admin -> Redireciona pro User
+        if (isLoggingIn || currentGroup === "(admin)") {
+          router.replace("/(tabs)/home");
+        }
+      }
     }
   }, [user, segments, loading]);
 
@@ -39,6 +53,7 @@ export function AuthProvider({ children }) {
         const userData = {
           token: savedToken,
           id: decoded.nameid,
+          role: decoded.role,
         };
 
         setUser(userData);
@@ -59,6 +74,7 @@ export function AuthProvider({ children }) {
       const userData = {
         token,
         id: userId,
+        role: decoded.role,
       };
 
       await SecureStore.setItemAsync("token", token);
