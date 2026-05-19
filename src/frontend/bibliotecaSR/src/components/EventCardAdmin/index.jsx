@@ -1,22 +1,21 @@
 import {
   Calendar as CalendarIcon,
   Clock,
-  Pencil,
-  Trash2,
+  Trash2
 } from "lucide-react-native";
-import { StyleSheet, Text, TouchableOpacity, View, Alert } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function EventCard({ event, handleDelete }) {
   if (event.categoria === 0) {
     return (
       <View style={styles.readingCard}>
         <View style={styles.actionContainer}>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => Alert.alert("Editar")}
             style={styles.actionButton}
           >
             <Pencil size={16} color="#004D36" />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity
             onPress={() => handleDelete(event)}
             style={styles.actionButton}
@@ -54,12 +53,12 @@ export default function EventCard({ event, handleDelete }) {
         </View>
 
         <View style={[styles.actionContainer, styles.actionContainerClub]}>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => Alert.alert("Editar")}
             style={styles.actionButton}
           >
             <Pencil size={16} color="#004D36" />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity
             onPress={() => handleDelete(event)}
             style={styles.actionButton}

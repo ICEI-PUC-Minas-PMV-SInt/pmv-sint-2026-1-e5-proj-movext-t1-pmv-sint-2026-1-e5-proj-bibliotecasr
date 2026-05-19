@@ -1,11 +1,23 @@
 import { AlertTriangle, Check, Clock } from "lucide-react-native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function ReservaCardConfirmada({ item, isExpired = false }) {
+export default function ReservaCardConfirmada({
+  item,
+  isExpired,
+  isCancellation = false,
+  handleConcluir={handleConcluir}
+}) {
   const formatDate = (dateString) => {
     if (!dateString) return "";
     return new Date(dateString).toLocaleDateString("pt-BR");
   };
+
+  const getLabelText = () => {
+    if (isCancellation) return "Desistiu em:";
+    return isExpired ? "Expirou em:" : "Expira em:";
+  };
+
+  const useExpiredStyle = isExpired || isCancellation;
 
   return (
     <View style={styles.cardContainer}>
@@ -20,35 +32,30 @@ export default function ReservaCardConfirmada({ item, isExpired = false }) {
       </View>
 
       <View style={styles.dateTimeContainer}>
-        <Text style={styles.expireLabel}>
-          {isExpired ? "Expirou em:" : "Expira em:"}
-        </Text>
+        <Text style={styles.expireLabel}>{getLabelText()}</Text>
 
         <View
           style={[
             styles.badgeData,
-            isExpired ? styles.badgeExpired : styles.badgeConfirmed,
+            useExpiredStyle ? styles.badgeExpired : styles.badgeConfirmed,
           ]}
         >
-          {/* {isExpired ? (
-            <AlertTriangle size={12} color="#64748b" />
-          ) : (
-            <Clock size={12} color="#166534" />
-          )} */}
           <Text
             style={[
               styles.dateText,
-              isExpired ? styles.textExpired : styles.textConfirmed,
+              useExpiredStyle ? styles.textExpired : styles.textConfirmed,
             ]}
           >
-            {formatDate(item.dataLimiteRetirada)}
+            {isCancellation
+              ? formatDate(item.dataAtualizacao)
+              : formatDate(item.dataLimiteRetirada)}
           </Text>
         </View>
 
-        {!isExpired && (
+        {!useExpiredStyle && (
           <TouchableOpacity
             style={styles.doneButton}
-            onPress={() => console.log("concluir")} 
+            onPress={() => handleConcluir(item)}
             activeOpacity={0.7}
           >
             <Check size={14} color="#FFF" />
@@ -136,11 +143,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#2563eb", 
+    backgroundColor: "#2563eb",
     paddingVertical: 8,
     paddingHorizontal: 2,
     borderRadius: 8,
-    marginTop: 8, 
+    marginTop: 8,
     gap: 4,
     width: "100%",
   },

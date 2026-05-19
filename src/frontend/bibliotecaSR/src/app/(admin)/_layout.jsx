@@ -20,18 +20,24 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => <Calendar color={color} size={24} />,
         }}
       />
-            <Tabs.Screen
+      <Tabs.Screen
         name="reservas"
         options={{
           title: "Reservas",
           tabBarIcon: ({ color }) => <Bookmark color={color} size={24} />,
         }}
       />
-                  <Tabs.Screen
+      <Tabs.Screen
         name="renovacoes"
         options={{
           title: "Renovacoes",
           tabBarIcon: ({ color }) => <RefreshCw color={color} size={24} />,
+        }}
+      />
+      <Tabs.Screen
+        name="criarEvento"
+        options={{
+          href: null, // Esconde o ícone da barra de abas
         }}
       />
     </Tabs>

@@ -1,6 +1,7 @@
 import { useRouter } from "expo-router";
+import { useFocusEffect } from '@react-navigation/native';
 import { BookOpen, Gamepad2, Plus } from "lucide-react-native";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import {
   Alert,
   ScrollView,
@@ -19,9 +20,19 @@ export default function Agenda() {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  useEffect(() => {
-    getEvents();
-  }, []);
+  const handlePress = () => {
+    router.push({
+      pathname: "/criarEvento",
+    });
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      getEvents();
+
+      return () => {};
+    }, []),
+  );
 
   const getEvents = async () => {
     try {
@@ -105,7 +116,7 @@ export default function Agenda() {
         <TouchableOpacity
           style={styles.createButton}
           activeOpacity={0.7}
-          onPress={() => Alert.alert("criar-evento")}
+          onPress={() => handlePress()}
         >
           <Plus size={18} color="#FFF" />
           <Text style={styles.createButtonText}>Criar Evento</Text>

@@ -1,19 +1,17 @@
-import { useCallback, useEffect, useState } from "react";
-import { Bookmark, CheckCircle2, XCircle } from "lucide-react-native";
+import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
-  RefreshControl,
+  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  SafeAreaView,
 } from "react-native";
-import api from "../../services/api";
-import ReservaCardPendente from "../../components/ReservaCardPendente";
 import ReservaCardConfirmada from "../../components/ReservaCardConfirmada";
+import ReservaCardPendente from "../../components/ReservaCardPendente";
+import api from "../../services/api";
 
 import Header from "../../components/Header";
 
@@ -22,6 +20,7 @@ export default function Reservas() {
   const [pendentes, setPendentes] = useState([]);
   const [confirmadas, setConfirmadas] = useState([]);
   const [expiradas, setExpiradas] = useState([]);
+  const [desistencias, setDesistencias] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -52,6 +51,32 @@ export default function Reservas() {
     }
   };
 
+  const fetchDesistencia = async () => {
+    try {
+      const response = await api.get("/Reservas/desistencia");
+      setDesistencias(response.data);
+    } catch (error) {
+      console.error("Erro desistências:", error);
+    }
+  };
+
+  const handleCancelarTodasExpiradas = async () => {
+    try {
+      const response = await api.put(`/reservas/encerrar-expiradas`);
+
+      Alert.alert("Sucesso!", "As reservas expiradas foram encerradas.");
+      onRefresh();
+    } catch (error) {
+      if (error.response) {
+        const mensagem = error.response.data;
+        Alert.alert("Atenção", mensagem);
+      } else {
+        console.error("Erro crítico:", error);
+        Alert.alert("Erro", "Não foi possível conectar ao servidor.");
+      }
+    }
+  };
+
   const carregarDadosPagina = async () => {
     setLoading(true);
     try {
@@ -59,6 +84,7 @@ export default function Reservas() {
         fetchPendentes(),
         fetchConfirmadas(),
         fetchExpiradas(),
+        fetchDesistencia(),
       ]);
     } catch (error) {
       Alert.alert(
@@ -85,7 +111,11 @@ export default function Reservas() {
 
     if (activeTab === "Em aberto") {
       if (pendentes.length === 0) {
-        return <Text style={styles.emptyText}>Nenhuma solicitação de reserva em aberto.</Text>;
+        return (
+          <Text style={styles.emptyText}>
+            Nenhuma solicitação de reserva em aberto.
+          </Text>
+        );
       }
 
       return pendentes.map((item) => (
@@ -103,14 +133,44 @@ export default function Reservas() {
         );
       }
       return confirmadas.map((item) => (
-        <ReservaCardConfirmada key={item.id} item={item} />
+        <ReservaCardConfirmada
+          key={item.id}
+          item={item}
+          isExpired={item.status === "Expirado"}
+          handleConcluir={handleConcluir}
+        />
       ));
-    } else {
+    } else if (activeTab === "Expiradas") {
       if (expiradas.length === 0) {
         return <Text style={styles.emptyText}>Nenhuma reserva expirada.</Text>;
       }
-      return expiradas.map((item) => (
-        <ReservaCardConfirmada key={item.id} item={item} isExpired={true} />
+      return (
+        <View style={{ width: "100%" }}>
+          <TouchableOpacity
+            style={styles.btnLimparLote}
+            onPress={handleCancelarTodasExpiradas}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.btnLimparLoteText}>
+              Cancelar reservas expiradas ({expiradas.length})
+            </Text>
+          </TouchableOpacity>
+
+          {expiradas.map((item) => (
+            <ReservaCardConfirmada key={item.id} item={item} isExpired={true} />
+          ))}
+        </View>
+      );
+    } else {
+      if (desistencias.length === 0) {
+        return <Text style={styles.emptyText}>Nenhuma desistência.</Text>;
+      }
+      return desistencias.map((item) => (
+        <ReservaCardConfirmada
+          key={item.id}
+          item={item}
+          isCancellation={true}
+        />
       ));
     }
   };
@@ -182,6 +242,37 @@ export default function Reservas() {
     );
   }
 
+  function handleConcluir(item) {
+    Alert.alert(
+      "Concluir Reserva",
+      `Tem certeza que deseja concluir a reserva de "${item.item.titulo}"?`,
+      [
+        { text: "Cancelar", style: "cancel" },
+        {
+          text: "Confirmar",
+          style: "destructive",
+          onPress: async () => {
+            try {
+              const response = await api.put(`/Reservas/${item.id}/concluida`);
+
+              Alert.alert("Sucesso!", "A reserva foi concluída com sucesso.");
+
+              onRefresh();
+            } catch (error) {
+              if (error.response) {
+                const mensagem = error.response.data;
+                Alert.alert("Atenção", mensagem);
+              } else {
+                console.error("Erro crítico:", error);
+                Alert.alert("Erro", "Não foi possível conectar ao servidor.");
+              }
+            }
+          },
+        },
+      ],
+    );
+  }
+
   if (loading) {
     return (
       <ActivityIndicator style={{ flex: 1 }} size="large" color="#006D77" />
@@ -195,24 +286,27 @@ export default function Reservas() {
         <Text style={styles.sectionTitle}>Reservas</Text>
 
         <View style={styles.tabContainer}>
-          {["Em aberto", "Confirmadas", "Expiradas"].map((tab) => (
-            <TouchableOpacity
-              key={tab}
-              onPress={() => setActiveTab(tab)}
-              style={[styles.tabItem, activeTab === tab && styles.activeTab]}
-            >
-              <Text
-                style={[
-                  styles.tabText,
-                  activeTab === tab && styles.activeTabText,
-                ]}
+          {["Em aberto", "Confirmadas", "Expiradas", "Desistências"].map(
+            (tab) => (
+              <TouchableOpacity
+                key={tab}
+                onPress={() => setActiveTab(tab)}
+                style={[styles.tabItem, activeTab === tab && styles.activeTab]}
               >
-                {tab === "Em aberto" && `${tab} (${pendentes.length})`}
-                {tab === "Confirmadas" && `${tab} (${confirmadas.length})`}
-                {tab === "Expiradas" && `${tab} (${expiradas.length})`}
-              </Text>
-            </TouchableOpacity>
-          ))}
+                <Text
+                  style={[
+                    styles.tabText,
+                    activeTab === tab && styles.activeTabText,
+                  ]}
+                >
+                  {tab === "Em aberto" && `${tab} (${pendentes.length})`}
+                  {tab === "Confirmadas" && `${tab} (${confirmadas.length})`}
+                  {tab === "Expiradas" && `${tab} (${expiradas.length})`}
+                  {tab === "Desistências" && `${tab} (${desistencias.length})`}
+                </Text>
+              </TouchableOpacity>
+            ),
+          )}
         </View>
 
         <ScrollView
@@ -280,5 +374,21 @@ const styles = StyleSheet.create({
     color: "#64748b",
     marginTop: 40,
     fontSize: 16,
+  },
+  btnLimparLote: {
+    backgroundColor: "#fef2f2",
+    borderWidth: 1,
+    borderColor: "#f87171",
+    borderRadius: 8,
+    paddingVertical: 12,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 16,
+    width: "100%",
+  },
+  btnLimparLoteText: {
+    color: "#991b1b",
+    fontSize: 15,
+    fontWeight: "bold",
   },
 });

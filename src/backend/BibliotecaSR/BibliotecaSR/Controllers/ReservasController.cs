@@ -329,7 +329,7 @@ namespace BibliotecaSR.Controllers
                 var notificacao = new Notificacao
                 {
                     UsuarioId = reserva.UsuarioId,
-                    Mensagem = $"Sua reserva do item ID {reserva.ItemId} expirou e foi cancelada.",
+                    Mensagem = $"Sua reserva do item '{reserva.Item.Titulo}' expirou e foi cancelada.",
                     Tipo = TipoNotificacao.Erro
                 };
 

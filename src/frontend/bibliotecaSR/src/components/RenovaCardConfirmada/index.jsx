@@ -1,18 +1,11 @@
-import { Clock, AlertTriangle } from "lucide-react-native";
-import { Bookmark, CheckCircle2, XCircle, Calendar } from "lucide-react-native";
 
 import {
-  ActivityIndicator,
-  Alert,
-  RefreshControl,
-  ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  View,
+  View
 } from "react-native";
 
-export default function RenovaCardConfirmada({ item }) {
+export default function RenovaCardConfirmada({ item, naoEfetivada = false }) {
   const formatDate = (dateString) => {
     if (!dateString) return "";
     return new Date(dateString).toLocaleDateString("pt-BR");
@@ -39,15 +32,31 @@ export default function RenovaCardConfirmada({ item }) {
 
       <View style={styles.loanDetailsContainer}>
         <View style={styles.loanDetailColumn}>
-          <Text style={styles.loanDetailLabel}>Retirado em:</Text>
+          <Text style={styles.loanDetailLabel}>
+            {naoEfetivada ? "Solicitado em:" : "Retirado em:"}
+          </Text>
           <Text style={styles.loanDetailValue}>
-            {formatDate(item.dataRetirada)}
+            {naoEfetivada
+              ? formatDate(item.dataSolicitacao || item.dataRetirada)
+              : formatDate(item.dataRetirada)}
           </Text>
         </View>
 
         <View style={styles.loanDetailColumn}>
-          <Text style={styles.loanDetailLabel}>Renovado Em:</Text>
-          <Text style={styles.loanDetailValue}>
+          <Text
+            style={[
+              styles.loanDetailLabel,
+              naoEfetivada && { color: "#94a3b8" },
+            ]}
+          >
+            {naoEfetivada ? "Não efetivado em:" : "Renovado em:"}
+          </Text>
+          <Text
+            style={[
+              styles.loanDetailValue,
+              naoEfetivada && { color: "#ef4444", fontWeight: "600" },
+            ]}
+          >
             {formatDate(item.dataAtualizacao)}
           </Text>
         </View>

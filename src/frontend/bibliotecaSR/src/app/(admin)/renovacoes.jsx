@@ -18,6 +18,7 @@ export default function Renovacoes() {
   const [activeTab, setActiveTab] = useState("Em aberto");
   const [pendentes, setPendentes] = useState([]);
   const [confirmadas, setConfirmadas] = useState([]);
+  const [naoEfetivadas, setNaoEfetivadas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
@@ -39,10 +40,19 @@ export default function Renovacoes() {
     }
   };
 
+  const fetchNaoEfetivadas = async () => {
+    try {
+      const response = await api.get("/Renovacoes/nao-efetivadas");
+      setNaoEfetivadas(response.data);
+    } catch (error) {
+      console.error("Erro não efetivadas:", error);
+    }
+  };
+
   const carregarDadosPagina = async () => {
     setLoading(true);
     try {
-      await Promise.all([fetchPendentes(), fetchConfirmadas()]);
+      await Promise.all([fetchPendentes(), fetchConfirmadas(), fetchNaoEfetivadas()]);
     } catch (error) {
       Alert.alert(
         "Erro",
@@ -69,7 +79,9 @@ export default function Renovacoes() {
     if (activeTab === "Em aberto") {
       if (pendentes.length === 0) {
         return (
-          <Text style={styles.emptyText}>Nenhuma solicitação de renovação em aberto.</Text>
+          <Text style={styles.emptyText}>
+            Nenhuma solicitação de renovação em aberto.
+          </Text>
         );
       }
 
@@ -89,6 +101,15 @@ export default function Renovacoes() {
       }
       return confirmadas.map((item) => (
         <RenovaCardConfirmada key={item.id} item={item} />
+      ));
+    } else if (activeTab === "Não Efetivadas") {
+      if (naoEfetivadas.length === 0) {
+        return (
+          <Text style={styles.emptyText}>Nenhuma renovação não efetivada.</Text>
+        );
+      }
+      return naoEfetivadas.map((item) => (
+        <RenovaCardConfirmada key={item.id} item={item} naoEfetivada={true} />
       ));
     }
   };
@@ -178,7 +199,7 @@ export default function Renovacoes() {
         <Text style={styles.sectionTitle}>Renovações</Text>
 
         <View style={styles.tabContainer}>
-          {["Em aberto", "Confirmadas"].map((tab) => (
+          {["Em aberto", "Confirmadas", "Não Efetivadas"].map((tab) => (
             <TouchableOpacity
               key={tab}
               onPress={() => setActiveTab(tab)}
@@ -192,6 +213,7 @@ export default function Renovacoes() {
               >
                 {tab === "Em aberto" && `${tab} (${pendentes.length})`}
                 {tab === "Confirmadas" && `${tab} (${confirmadas.length})`}
+                {tab === "Não Efetivadas" && `${tab} (${naoEfetivadas.length})`}
               </Text>
             </TouchableOpacity>
           ))}

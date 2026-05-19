@@ -21,11 +21,11 @@ namespace BibliotecaSR.Models
         {
             base.OnModelCreating(modelBuilder);         
 
-            var aux = new Usuario
+            var admin = new Usuario
             {
                 Id = 1,
-                Nome = "Charlie",
-                Email = "charlie@gmail.com",
+                Nome = "Admin",
+                Email = "admin@gmail.com",
                 Senha = "$2a$11$2ETt9/wToZgZd5NOR4AZROHpvMWwrzSMYbbnJJkEur4AaGISK0Lvy", //admin123
                 Perfil = Perfil.Funcionario
             };
@@ -57,7 +57,7 @@ namespace BibliotecaSR.Models
                 Perfil = Perfil.Usuario
             };
 
-            modelBuilder.Entity<Usuario>().HasData(aux, user, user2, user3);            
+            modelBuilder.Entity<Usuario>().HasData(admin, user, user2, user3);            
 
         }
 
