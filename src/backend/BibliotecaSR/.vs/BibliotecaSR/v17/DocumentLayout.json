@@ -3,11 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/bibliotecasr_bd/True/SqlTable/dbo.Usuarios.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\eventoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\eventoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\renovacoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\renovacoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\controllers\\reservascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\migrations\\20260324192301_m01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\migrations\\20260324192301_m01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|c:\\users\\lenovo\\desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\bibliotecasr\\bibliotecasr\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D304FC7C-17F5-4D87-9516-D312B42F9F34}|BibliotecaSR\\BibliotecaSR.csproj|solutionrelative:bibliotecasr\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,26 +62,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "dbo.Usuarios [Dados]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/bibliotecasr_bd/True/SqlTable/dbo.Usuarios.sql",
-              "ToolTip": "dbo.Usuarios [Dados]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-05-27T23:29:22.714Z",
+              "DocumentIndex": 0,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Data\\DbSeeder.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "BibliotecaSR\\Data\\DbSeeder.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAgwKEAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T22:02:21.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "EventosController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\EventosController.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Controllers\\EventosController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\EventosController.cs",
+              "RelativeToolTip": "BibliotecaSR\\Controllers\\EventosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-14T22:51:48.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20260324192301_M01.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Migrations\\20260324192301_M01.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Migrations\\20260324192301_M01.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Migrations\\20260324192301_M01.cs",
+              "RelativeToolTip": "BibliotecaSR\\Migrations\\20260324192301_M01.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T22:55:46.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Models\\AppDbContext.cs",
               "RelativeDocumentMoniker": "BibliotecaSR\\Models\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Models\\AppDbContext.cs",
               "RelativeToolTip": "BibliotecaSR\\Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA9wBcAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwB4AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T09:45:55.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-13T22:53:26.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReservasController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\ReservasController.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Controllers\\ReservasController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\ReservasController.cs",
+              "RelativeToolTip": "BibliotecaSR\\Controllers\\ReservasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T22:37:50.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RenovacoesController.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\RenovacoesController.cs",
+              "RelativeDocumentMoniker": "BibliotecaSR\\Controllers\\RenovacoesController.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Desktop\\github\\pmv-sint-2026-1-e5-proj-movext-t1-pmv-sint-2026-1-e5-proj-bibliotecasr\\src\\backend\\BibliotecaSR\\BibliotecaSR\\Controllers\\RenovacoesController.cs",
+              "RelativeToolTip": "BibliotecaSR\\Controllers\\RenovacoesController.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAA8wCAAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T22:37:46.49Z"
             }
           ]
         }

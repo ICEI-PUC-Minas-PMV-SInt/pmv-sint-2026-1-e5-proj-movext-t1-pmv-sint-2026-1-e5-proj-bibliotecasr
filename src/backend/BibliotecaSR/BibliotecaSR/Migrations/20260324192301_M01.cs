@@ -34,7 +34,7 @@ namespace BibliotecaSR.Migrations
                 columns: new[] { "Id", "Email", "Nome", "Perfil", "Senha", "Status" },
                 values: new object[,]
                 {
-                    { 1, "charlie@gmail.com", "Charlie", 0, "$2a$11$2ETt9/wToZgZd5NOR4AZROHpvMWwrzSMYbbnJJkEur4AaGISK0Lvy", null },
+                    { 1, "admin@gmail.com", "Admin", 0, "$2a$11$2ETt9/wToZgZd5NOR4AZROHpvMWwrzSMYbbnJJkEur4AaGISK0Lvy", null },
                     { 2, "geovana@gmail.com", "Geovana", 1, "$2a$11$6PAugevBqTqrfKPgQyvOGONZ3vXrNVaZvHUgF9EtMezQ3rpfTRDRW", 0 },
                     { 3, "maria@gmail.com", "Maria", 1, "$2a$11$nj5xtOPG4.h1oRi7hg10vOzGZwYrUaYnMo6Dk.xPfrea6EYRTg4P.", 0 },
                     { 4, "rodrigo@gmail.com", "Rodrigo", 1, "$2a$11$krSnweECHsBVNdsz9UKjsOfe/UiqbsPbqwNMHvKiVyoNZYjKPH0oW", 0 }

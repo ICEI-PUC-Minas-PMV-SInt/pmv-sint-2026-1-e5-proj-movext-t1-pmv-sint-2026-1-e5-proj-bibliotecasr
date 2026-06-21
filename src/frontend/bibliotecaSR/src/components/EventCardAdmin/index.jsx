@@ -1,21 +1,32 @@
 import {
   Calendar as CalendarIcon,
   Clock,
-  Trash2
+  Trash2,
+  Pencil
 } from "lucide-react-native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useRouter } from "expo-router";
 
 export default function EventCard({ event, handleDelete }) {
+  const router = useRouter(); 
+
+  const handleEditar = () => {
+    router.push({
+      pathname: "/editarEvento",
+      params: { eventString: JSON.stringify(event) }
+    });
+  };
+
   if (event.categoria === 0) {
     return (
       <View style={styles.readingCard}>
         <View style={styles.actionContainer}>
-          {/* <TouchableOpacity
-            onPress={() => Alert.alert("Editar")}
+          <TouchableOpacity
+            onPress={handleEditar}
             style={styles.actionButton}
           >
             <Pencil size={16} color="#004D36" />
-          </TouchableOpacity> */}
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => handleDelete(event)}
             style={styles.actionButton}
@@ -53,12 +64,12 @@ export default function EventCard({ event, handleDelete }) {
         </View>
 
         <View style={[styles.actionContainer, styles.actionContainerClub]}>
-          {/* <TouchableOpacity
-            onPress={() => Alert.alert("Editar")}
+          <TouchableOpacity
+            onPress={handleEditar}
             style={styles.actionButton}
           >
             <Pencil size={16} color="#004D36" />
-          </TouchableOpacity> */}
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => handleDelete(event)}
             style={styles.actionButton}

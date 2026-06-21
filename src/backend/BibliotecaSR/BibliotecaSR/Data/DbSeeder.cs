@@ -208,8 +208,8 @@ namespace BibliotecaSR.Data
                 {
                     UsuarioId = 2,
                     ExemplarId = exemplaresAdicionados[4].Id,
-                    DataRetirada = DateTime.UtcNow.AddDays(-13),
-                    DataPrevistaDevolucao = DateTime.UtcNow.AddDays(2),
+                    DataRetirada = DateTime.UtcNow.AddDays(-5),
+                    DataPrevistaDevolucao = DateTime.UtcNow.AddDays(10),
                     Status = StatusEmprestimo.Emprestado
                 },
                 new Emprestimo
@@ -253,9 +253,8 @@ namespace BibliotecaSR.Data
                 {
                     UsuarioId = 3,
                     ExemplarId = exemplaresAdicionados[9].Id,
-                    DataRetirada = DateTime.UtcNow.AddDays(-15),
-                    DataPrevistaDevolucao = DateTime.UtcNow,
-                    Status = StatusEmprestimo.Emprestado
+                    DataRetirada = DateTime.UtcNow.AddDays(-5),
+                    DataPrevistaDevolucao = DateTime.UtcNow.AddDays(10),
                 },
                 new Emprestimo
                 {

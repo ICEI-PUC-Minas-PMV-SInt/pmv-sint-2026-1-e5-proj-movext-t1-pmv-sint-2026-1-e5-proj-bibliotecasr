@@ -6,8 +6,7 @@ import {
   CheckCircle2,
   Hash,
   Info,
-  User,
-  XCircle,
+  User
 } from "lucide-react-native";
 import { useEffect, useState } from "react";
 import {
@@ -203,19 +202,12 @@ export default function Item() {
         <TouchableOpacity
           style={[
             styles.reserveButton,
-            item.disponiveis === 0 && styles.disabledButton,
           ]}
           onPress={handleReserva}
-          disabled={item.disponiveis === 0}
         >
-          {item.disponiveis > 0 ? (
-            <CheckCircle2 color="#FFF" size={20} style={{ marginRight: 8 }} />
-          ) : (
-            <XCircle color="#FFF" size={20} style={{ marginRight: 8 }} />
-          )}
-          <Text style={styles.reserveButtonText}>
-            {item.disponiveis > 0 ? "Solicitar Reserva" : "Indisponível"}
-          </Text>
+          <CheckCircle2 color="#FFF" size={20} style={{ marginRight: 8 }} />
+
+          <Text style={styles.reserveButtonText}>Solicitar Reserva</Text>
         </TouchableOpacity>
       </View>
     </View>

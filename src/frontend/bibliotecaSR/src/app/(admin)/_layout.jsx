@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Calendar, Home, Bookmark, RefreshCw } from "lucide-react-native";
+import { Bookmark, Calendar, Home, RefreshCw } from "lucide-react-native";
 
 export default function TabsLayout() {
   return (
@@ -36,6 +36,12 @@ export default function TabsLayout() {
       />
       <Tabs.Screen
         name="criarEvento"
+        options={{
+          href: null, // Esconde o ícone da barra de abas
+        }}
+      />
+      <Tabs.Screen
+        name="editarEvento"
         options={{
           href: null, // Esconde o ícone da barra de abas
         }}
